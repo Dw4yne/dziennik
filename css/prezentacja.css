@@ -1,0 +1,48 @@
+.Kowalski{
+width: 350px;
+height: 0;
+margin: 0 auto;
+}
+
+.Soliszewski{
+  width: 350px;
+  height: 0;
+  float: left;
+}
+
+.Prda{
+  width: 350px;
+  height: 0;
+  float: right;
+}
+
+.Olszewski{
+  width: 350px;
+  height: 0;
+  float: left;
+  position: relative;
+
+}
+
+.Arson{
+  width: 350px;
+  height: 0;
+  float: right;
+  position: relative;
+}
+
+.colorCard{
+background-color: #7aa9f7 !important;
+}
+
+#Kowalski{
+  border: 10px solid #5576ac !important;
+}
+
+.hm-white-slight{
+  margin: 0 auto;
+}
+
+.inni{
+  border: 10px solid #7aa9f7 !important;
+}

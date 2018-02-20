@@ -1,0 +1,125 @@
+.carousel {
+  width: 1110px;
+  height: 625px;
+}
+
+.footer1{
+  margin-top: 5%;
+}
+.semestr1{
+  margin-top: 2%;
+}
+body{
+  overflow-x: hidden;
+  background-image: url(#);
+
+}
+.card{
+margin: 3%;
+}
+.planKolor{
+background-color: #d5f6f2;
+}
+
+.th-lg{
+  border-left: solid 1px;
+  border-color: white;
+}
+
+/*.navbarglowna{
+ background-color: transparent !important;
+
+}*/
+
+.nav-link{
+  color:  black !important;
+}
+
+.navbar-brand{
+  color:  black !important;
+}
+
+.glownaguzik{
+  background-color: transparent !important;
+}
+
+
+
+#oceny{
+  margin-top: 3%;
+
+}
+
+#table_head{
+  color: white ;
+}
+.pasektabeli{
+  background-color: #2bbbad !important;
+}
+.tablearozmiar{
+  width: 90%;
+  margin-left: 5%;
+
+}
+.nr{
+  width: 4%;
+}
+.ocenysemestry{
+  width: 40%;
+}
+.przedmiotytabela{
+  width: 20%;
+}
+.glowna{
+  margin-top: 100px;
+  width: 100%;
+}
+.cardy{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.lewa{
+  text-align: right;
+}
+.prawa{
+
+}
+
+.obrazCard{
+  max-width: 100%;
+  max-height: 100%;
+}
+.linki{
+  color: white;
+  background-color: #737373;
+  border: 0;
+  margin: 2px;
+  height: 40px;
+}
+.floatleft{
+  float: left;
+}
+.linki:hover{
+  color: #d44452;
+}
+.odstepMain{
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+.podkresl{
+  border-bottom: 2px solid transparent;
+  color: black;
+}
+.podkresl:hover{
+  border-bottom: 2px solid #d44452;
+  color: black;
+  background-color: transparent !important;
+}
+.dropActive:active {
+    background-color: #d44452 !important;
+}
+.dropLine{
+  color: black;
+  margin: 0;
+}

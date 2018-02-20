@@ -1,0 +1,17 @@
+body{
+  background: url("./../img/indexbg.jpg")  ;
+}
+.logowanie{
+  height: 500px;
+  width: 500px;
+  margin-top: 300px;
+  margin-left: 300px;
+}
+.futer{
+  align-content: center;
+}
+
+.logoLogowanie{
+  width: 50%;
+  margin-top: 5px;
+}

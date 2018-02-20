@@ -1,0 +1,26 @@
+.rejestrDodany{
+  width: 100%;
+  color: #4285f4;
+  font-size: 38px;
+  padding-top: 25px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.blok{
+  border-radius: 5px;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.logo{
+  margin-left: 117.5px;
+}
+
+.przyciskRejestrDodany{
+  margin-bottom: 20px;
+  margin-top: 25px;
+  width: 100%;
+}

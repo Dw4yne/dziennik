@@ -1,0 +1,81 @@
+.copyright{
+  background-color: #092a26;
+  text-align: center;
+  color: white;
+  padding: 5px;
+}
+
+.footer1{
+  background-color: #13534d;
+  color: white;
+  padding: 10px;
+}
+
+.Kolumna{
+  background-color: #13534d !important;
+  padding: 10px;
+  font-size: 1.15em;
+}
+
+.html{
+  width: 25px;
+}
+
+h5{
+  font-size: 2em;
+  text-align: center;
+  font-family: 'Bungee', cursive;
+  padding-bottom: 10px;
+}
+
+.col-md-3{
+  border-right: 1px solid #0d1a30;
+}
+
+.oProjekcie{
+  text-align: center;
+}
+
+.mdblogo{
+  width: 125px;
+  height: 45px;
+}
+
+.blogo{
+  width: 75px;
+  height: 75px;
+  margin-top: 20px;
+}
+
+.mysqlogo{
+  width: 120px;
+  height: 62px;
+  margin-top: 20px;
+}
+
+.srodek{
+  text-align: center;
+}
+
+.lewa{
+  text-align: left;
+}
+
+.fblogo{
+  width: 48px;
+}
+
+.ytlogo{
+  width: 48px;
+  margin-top: 10px;
+}
+
+.githublogo{
+  width: 48px;
+  margin-top: 10px;
+}
+
+.gpluslogo{
+  width: 48px;
+  margin-top: 10px;
+}
