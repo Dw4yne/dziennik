@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Czas generowania: 17 Sty 2018, 22:04
--- Wersja serwera: 10.1.19-MariaDB
--- Wersja PHP: 5.6.28
+-- Czas generowania: 22 Lut 2018, 09:49
+-- Wersja serwera: 10.1.16-MariaDB
+-- Wersja PHP: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -79,23 +79,25 @@ INSERT INTO `nauczyciele` (`idNauczyciela`, `imie`, `nazwisko`, `telefon`, `logi
 --
 
 CREATE TABLE `oceny` (
-  `Id_oceny` int(11) NOT NULL,
-  `ocena` varchar(11) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `waga` int(11) NOT NULL,
-  `komentarz` text CHARACTER SET utf8 COLLATE utf8_unicode_ci
+  `id_oceny` int(11) NOT NULL,
+  `przedmiot` varchar(50) NOT NULL,
+  `id_ucznia` int(11) NOT NULL,
+  `ocena` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Zrzut danych tabeli `oceny`
 --
 
-INSERT INTO `oceny` (`Id_oceny`, `ocena`, `waga`, `komentarz`) VALUES
-(1, '6', 3, NULL),
-(2, '6+', 5, NULL),
-(3, '1+', 5, NULL),
-(4, '1+', 5, NULL),
-(5, '2-', 5, 'Idealna ocena z PHP.GÓWNO'),
-(8, 'Ocena', 0, '');
+INSERT INTO `oceny` (`id_oceny`, `przedmiot`, `id_ucznia`, `ocena`) VALUES
+(1, 'Matematyka', 1, 3),
+(2, 'Jez. Angielski', 2, 4),
+(3, 'Matematyka', 1, 3),
+(4, 'Jez. Angielski', 2, 4),
+(5, 'Witryny i aplikacje internetowe', 2, 5),
+(6, 'Systemy baz danych', 1, 2),
+(7, 'Historia', 2, 1),
+(8, 'Biologia', 1, 4);
 
 -- --------------------------------------------------------
 
@@ -232,7 +234,7 @@ ALTER TABLE `nauczyciele`
 -- Indexes for table `oceny`
 --
 ALTER TABLE `oceny`
-  ADD PRIMARY KEY (`Id_oceny`);
+  ADD PRIMARY KEY (`id_oceny`);
 
 --
 -- Indexes for table `opiekunowie`
@@ -276,7 +278,7 @@ ALTER TABLE `nauczyciele`
 -- AUTO_INCREMENT dla tabeli `oceny`
 --
 ALTER TABLE `oceny`
-  MODIFY `Id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT dla tabeli `opiekunowie`
 --
