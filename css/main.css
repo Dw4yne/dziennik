@@ -1,3 +1,8 @@
+.page-link, .page-link:hover{
+  color: black;
+
+
+}
 .carousel {
   width: 1110px;
   height: 625px;

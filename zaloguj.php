@@ -10,7 +10,7 @@
 
   require_once "connect.php";
 
-  $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
+
 
 if($polaczenie->connect_errno!=0)
 {
@@ -37,7 +37,7 @@ if ($wynik = @$polaczenie->query($sql))
 
 
     $wiersz = $wynik->fetch_assoc();
-    $_SESSION['id'] = $wiersz['id'];
+    $_SESSION['id'] = $wiersz['idUcznia'];
     $_SESSION['imie'] = $wiersz['imie'];
     $_SESSION['nazwisko'] = $wiersz['nazwisko'];
     $_SESSION['loginzmienna'] = $wiersz['login'];

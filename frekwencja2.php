@@ -119,7 +119,7 @@
 
         <!--Pagination -->
         <nav class="my-3 pt-0">
-            <ul class="pagination pagination-circle pg-blue mb-0">
+            <ul class="pagination pagination-circle pg-teal mb-0">
 
                 <!--Numbers-->
                 <li class="page-item"><a href="frekwencja1.php" class="page-link">1</a></li>

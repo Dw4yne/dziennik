@@ -35,7 +35,7 @@
     <tr class="table pasektabeli">
       <th class="text-center nr"><p class="h5">Data</p></th>
       <th class="text-center"><p class="h5">Nr. Lekcji</p></th>
-      <th class="text-center"><p class="h5">Nieobecności</p></th>      
+      <th class="text-center"><p class="h5">Nieobecności</p></th>
       <th class="text-center"><p class="h5">SP</p></th>
       <th class="text-center"><p class="h5">ZW</p></th>
     </tr>
@@ -119,7 +119,7 @@
 
         <!--Pagination -->
         <nav class="my-3 pt-0">
-            <ul class="pagination pagination-circle pg-blue mb-0">
+            <ul class="pagination pagination-circle pg-teal mb-0">
 
                 <!--Numbers-->
                 <li class="page-item active"><a class="page-link">1</a></li>
