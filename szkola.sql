@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Czas generowania: 26 Lut 2018, 10:26
--- Wersja serwera: 10.1.25-MariaDB
--- Wersja PHP: 5.6.31
+-- Czas generowania: 17 Sty 2018, 22:04
+-- Wersja serwera: 10.1.19-MariaDB
+-- Wersja PHP: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -81,20 +79,23 @@ INSERT INTO `nauczyciele` (`idNauczyciela`, `imie`, `nazwisko`, `telefon`, `logi
 --
 
 CREATE TABLE `oceny` (
-  `id_oceny` int(11) NOT NULL,
-  `przedmiot` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `id_ucznia` int(11) NOT NULL,
-  `ocena` float NOT NULL
+  `Id_oceny` int(11) NOT NULL,
+  `ocena` varchar(11) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `waga` int(11) NOT NULL,
+  `komentarz` text CHARACTER SET utf8 COLLATE utf8_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Zrzut danych tabeli `oceny`
 --
 
-INSERT INTO `oceny` (`id_oceny`, `przedmiot`, `id_ucznia`, `ocena`) VALUES
-(1, 'Jez. Angielski', 2, 5),
-(2, 'Jez. Angielski', 2, 2),
-(3, 'Historia', 2, 6);
+INSERT INTO `oceny` (`Id_oceny`, `ocena`, `waga`, `komentarz`) VALUES
+(1, '6', 3, NULL),
+(2, '6+', 5, NULL),
+(3, '1+', 5, NULL),
+(4, '1+', 5, NULL),
+(5, '2-', 5, 'Idealna ocena z PHP.GÓWNO'),
+(8, 'Ocena', 0, '');
 
 -- --------------------------------------------------------
 
@@ -231,7 +232,7 @@ ALTER TABLE `nauczyciele`
 -- Indexes for table `oceny`
 --
 ALTER TABLE `oceny`
-  ADD PRIMARY KEY (`id_oceny`);
+  ADD PRIMARY KEY (`Id_oceny`);
 
 --
 -- Indexes for table `opiekunowie`
@@ -275,7 +276,7 @@ ALTER TABLE `nauczyciele`
 -- AUTO_INCREMENT dla tabeli `oceny`
 --
 ALTER TABLE `oceny`
-  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT dla tabeli `opiekunowie`
 --
@@ -295,8 +296,7 @@ ALTER TABLE `semestr`
 -- AUTO_INCREMENT dla tabeli `uczen`
 --
 ALTER TABLE `uczen`
-  MODIFY `idUcznia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
-
+  MODIFY `idUcznia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
