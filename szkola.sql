@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 26 Lut 2018, 10:26
+-- Czas generowania: 27 Lut 2018, 11:30
 -- Wersja serwera: 10.1.25-MariaDB
 -- Wersja PHP: 5.6.31
 
@@ -29,50 +29,39 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `klasy` (
-  `idKlasy` int(11) NOT NULL,
-  `nazwa klasy` varchar(2) NOT NULL,
-  `idWychowawcy` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id_klasy` int(11) NOT NULL,
+  `klasa` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `id_wychowawcy` int(11) NOT NULL,
+  `profil` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `klasy`
 --
 
-INSERT INTO `klasy` (`idKlasy`, `nazwa klasy`, `idWychowawcy`) VALUES
-(1, '1a', 1),
-(2, '1b', 2),
-(3, '1c', 3),
-(4, '2a', 4),
-(5, '2b', 5),
-(6, '2c', 6),
-(7, '3a', 7),
-(8, '3b', 8),
-(9, '3c', 9),
-(10, '4a', 10),
-(11, '4b', 11),
-(12, '4c', 12);
+INSERT INTO `klasy` (`id_klasy`, `klasa`, `id_wychowawcy`, `profil`) VALUES
+(0, '3A', 1, 'Technik informatyk');
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `nauczyciele`
+-- Struktura tabeli dla tabeli `nauczyciel`
 --
 
-CREATE TABLE `nauczyciele` (
-  `idNauczyciela` int(11) NOT NULL,
-  `imie` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `nazwisko` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `telefon` varchar(11) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `login` varchar(30) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `haslo` varchar(30) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `nauczyciel` (
+  `id_nauczyciela` int(11) NOT NULL,
+  `imie` text COLLATE utf8_unicode_ci NOT NULL,
+  `nazwisko` text COLLATE utf8_unicode_ci NOT NULL,
+  `login` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `haslo` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Zrzut danych tabeli `nauczyciele`
+-- Zrzut danych tabeli `nauczyciel`
 --
 
-INSERT INTO `nauczyciele` (`idNauczyciela`, `imie`, `nazwisko`, `telefon`, `login`, `haslo`) VALUES
-(1, 'Wojciech', 'Zapiekański', '999999999', 'gruby', 'nierob');
+INSERT INTO `nauczyciel` (`id_nauczyciela`, `imie`, `nazwisko`, `login`, `haslo`) VALUES
+(1, 'Justyna', 'Wołejko', 'loginj', 'loginj');
 
 -- --------------------------------------------------------
 
@@ -82,109 +71,46 @@ INSERT INTO `nauczyciele` (`idNauczyciela`, `imie`, `nazwisko`, `telefon`, `logi
 
 CREATE TABLE `oceny` (
   `id_oceny` int(11) NOT NULL,
-  `przedmiot` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `id_przedmiotu` int(11) NOT NULL,
   `id_ucznia` int(11) NOT NULL,
-  `ocena` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `ocena` float NOT NULL,
+  `id_nauczyciela` int(11) NOT NULL,
+  `semestr` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `oceny`
 --
 
-INSERT INTO `oceny` (`id_oceny`, `przedmiot`, `id_ucznia`, `ocena`) VALUES
-(1, 'Jez. Angielski', 2, 5),
-(2, 'Jez. Angielski', 2, 2),
-(3, 'Historia', 2, 6);
+INSERT INTO `oceny` (`id_oceny`, `id_przedmiotu`, `id_ucznia`, `ocena`, `id_nauczyciela`, `semestr`) VALUES
+(2, 6, 2, 5, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `opiekunowie`
+-- Struktura tabeli dla tabeli `przedmiot`
 --
 
-CREATE TABLE `opiekunowie` (
-  `idOpiekuna` int(11) NOT NULL,
-  `imie` varchar(11) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `nazwisko` varchar(11) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `telefon` int(9) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `przedmiot` (
+  `id_przedmiotu` int(11) NOT NULL,
+  `przedmiot` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Zrzut danych tabeli `opiekunowie`
+-- Zrzut danych tabeli `przedmiot`
 --
 
-INSERT INTO `opiekunowie` (`idOpiekuna`, `imie`, `nazwisko`, `telefon`) VALUES
-(1, 'Ewa', 'Sawicka', 507834067),
-(2, 'Michał', 'Soliszewski', 507407867),
-(3, 'Eustachy', 'Kowalski', 532507954),
-(4, 'Staś', 'Jędrach', 897601980),
-(5, 'Małgorzata', 'Prądzińska', 507059234),
-(6, 'Ala', 'Rutkowska', 293059704),
-(7, 'Mateusz', 'Jabłoński', 697039597),
-(8, 'Ewelina', 'Woźniak', 103405321),
-(9, 'Kuba', 'Marszałek', 607932567),
-(10, 'Edward', 'Sokołowski', 908543212),
-(11, 'Marysia', 'Borkowska', 607948283),
-(12, 'Jagoda', 'Kaczmarek', 607543780),
-(13, 'Edyp', 'Adamczyk', 123452045),
-(14, 'Karolina', 'Pawłowska', 765363536),
-(15, 'Magdalena', 'Szczepańska', 874745464),
-(16, 'Michał', 'Nowak', 604459324),
-(17, 'Alicja', 'Pawlak', 704569342),
-(18, 'Justyna', 'Syberiusz', 435676332),
-(19, 'Kamila', 'Wieczorek', 310341453),
-(20, 'Andrzej', 'Borczyk', 564089234),
-(21, 'Tadeusz', 'Kowalczyk', 123678345),
-(22, 'Ameba', 'Olszewska', 321876345);
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `przedmioty`
---
-
-CREATE TABLE `przedmioty` (
-  `idPrzedmiotu` int(11) NOT NULL,
-  `nazwa` varchar(20) NOT NULL,
-  `idNauczyciela` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Zrzut danych tabeli `przedmioty`
---
-
-INSERT INTO `przedmioty` (`idPrzedmiotu`, `nazwa`, `idNauczyciela`) VALUES
-(1, 'j.Polski', 1),
-(2, 'j.Angielski', 2),
-(3, 'j.Niemiecki', 3),
-(4, 'Informatyka', 4),
-(5, 'Matematyka', 5),
-(6, 'Bazy danych', 6),
-(7, 'Sieci komputerowe', 7),
-(8, 'Biologia', 8),
-(9, 'W-F', 9),
-(10, 'Systemy operacyjne', 10),
-(11, 'Historia', 11),
-(12, 'Geografia', 12);
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `semestr`
---
-
-CREATE TABLE `semestr` (
-  `Id_semestru` int(11) NOT NULL,
-  `numer semestru` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Zrzut danych tabeli `semestr`
---
-
-INSERT INTO `semestr` (`Id_semestru`, `numer semestru`) VALUES
-(1, 1),
-(2, 2);
+INSERT INTO `przedmiot` (`id_przedmiotu`, `przedmiot`) VALUES
+(3, 'Biologia'),
+(4, 'Wiedza o społeczeństwie'),
+(5, 'Historia'),
+(6, 'j. Polski'),
+(7, 'j. Niemiecki'),
+(8, 'j. Angielski'),
+(9, 'Matematyka'),
+(10, 'informatyka'),
+(11, 'Wychowanie fizyczne'),
+(12, 'Religia');
 
 -- --------------------------------------------------------
 
@@ -193,23 +119,20 @@ INSERT INTO `semestr` (`Id_semestru`, `numer semestru`) VALUES
 --
 
 CREATE TABLE `uczen` (
-  `idUcznia` int(11) NOT NULL,
-  `imie` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `nazwisko` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `idKlasy` int(11) NOT NULL,
-  `telefon` int(11) NOT NULL,
-  `idOpiekuna` int(11) NOT NULL,
-  `login` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `haslo` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id_ucznia` int(11) NOT NULL,
+  `imie` text COLLATE utf8_unicode_ci NOT NULL,
+  `nazwisko` text COLLATE utf8_unicode_ci NOT NULL,
+  `login` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `haslo` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `id_klasy` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `uczen`
 --
 
-INSERT INTO `uczen` (`idUcznia`, `imie`, `nazwisko`, `idKlasy`, `telefon`, `idOpiekuna`, `login`, `haslo`) VALUES
-(1, 'Dominik', 'Kowalski', 0, 123123123, 0, 'domin', 'teb'),
-(2, 'Kamil', 'Soliszewski', 0, 132435656, 0, 'loginiarz', 'haslarz');
+INSERT INTO `uczen` (`id_ucznia`, `imie`, `nazwisko`, `login`, `haslo`, `id_klasy`) VALUES
+(2, 'Kamil', 'Soliszewski', 'login', 'haslo', 0);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -219,43 +142,38 @@ INSERT INTO `uczen` (`idUcznia`, `imie`, `nazwisko`, `idKlasy`, `telefon`, `idOp
 -- Indexes for table `klasy`
 --
 ALTER TABLE `klasy`
-  ADD PRIMARY KEY (`idKlasy`);
+  ADD PRIMARY KEY (`id_klasy`),
+  ADD KEY `klasa` (`klasa`),
+  ADD KEY `id_wychowawcy` (`id_wychowawcy`);
 
 --
--- Indexes for table `nauczyciele`
+-- Indexes for table `nauczyciel`
 --
-ALTER TABLE `nauczyciele`
-  ADD PRIMARY KEY (`idNauczyciela`);
+ALTER TABLE `nauczyciel`
+  ADD PRIMARY KEY (`id_nauczyciela`);
 
 --
 -- Indexes for table `oceny`
 --
 ALTER TABLE `oceny`
-  ADD PRIMARY KEY (`id_oceny`);
+  ADD PRIMARY KEY (`id_oceny`),
+  ADD KEY `id_przedmiotu` (`id_przedmiotu`),
+  ADD KEY `id_ucznia` (`id_ucznia`),
+  ADD KEY `id_nauczyciela` (`id_nauczyciela`);
 
 --
--- Indexes for table `opiekunowie`
+-- Indexes for table `przedmiot`
 --
-ALTER TABLE `opiekunowie`
-  ADD PRIMARY KEY (`idOpiekuna`);
-
---
--- Indexes for table `przedmioty`
---
-ALTER TABLE `przedmioty`
-  ADD PRIMARY KEY (`idPrzedmiotu`);
-
---
--- Indexes for table `semestr`
---
-ALTER TABLE `semestr`
-  ADD PRIMARY KEY (`Id_semestru`);
+ALTER TABLE `przedmiot`
+  ADD PRIMARY KEY (`id_przedmiotu`),
+  ADD KEY `id_przedmiotu` (`id_przedmiotu`);
 
 --
 -- Indexes for table `uczen`
 --
 ALTER TABLE `uczen`
-  ADD PRIMARY KEY (`idUcznia`);
+  ADD PRIMARY KEY (`id_ucznia`),
+  ADD KEY `id_klasy` (`id_klasy`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -265,37 +183,51 @@ ALTER TABLE `uczen`
 -- AUTO_INCREMENT dla tabeli `klasy`
 --
 ALTER TABLE `klasy`
-  MODIFY `idKlasy` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_klasy` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT dla tabeli `nauczyciele`
+-- AUTO_INCREMENT dla tabeli `nauczyciel`
 --
-ALTER TABLE `nauczyciele`
-  MODIFY `idNauczyciela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `nauczyciel`
+  MODIFY `id_nauczyciela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT dla tabeli `oceny`
 --
 ALTER TABLE `oceny`
-  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT dla tabeli `opiekunowie`
+-- AUTO_INCREMENT dla tabeli `przedmiot`
 --
-ALTER TABLE `opiekunowie`
-  MODIFY `idOpiekuna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
---
--- AUTO_INCREMENT dla tabeli `przedmioty`
---
-ALTER TABLE `przedmioty`
-  MODIFY `idPrzedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT dla tabeli `semestr`
---
-ALTER TABLE `semestr`
-  MODIFY `Id_semestru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `przedmiot`
+  MODIFY `id_przedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT dla tabeli `uczen`
 --
 ALTER TABLE `uczen`
-  MODIFY `idUcznia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
+  MODIFY `id_ucznia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- Ograniczenia dla zrzutów tabel
+--
+
+--
+-- Ograniczenia dla tabeli `klasy`
+--
+ALTER TABLE `klasy`
+  ADD CONSTRAINT `klasy_ibfk_1` FOREIGN KEY (`id_wychowawcy`) REFERENCES `nauczyciel` (`id_nauczyciela`);
+
+--
+-- Ograniczenia dla tabeli `oceny`
+--
+ALTER TABLE `oceny`
+  ADD CONSTRAINT `oceny_ibfk_1` FOREIGN KEY (`id_przedmiotu`) REFERENCES `przedmiot` (`id_przedmiotu`),
+  ADD CONSTRAINT `oceny_ibfk_2` FOREIGN KEY (`id_nauczyciela`) REFERENCES `nauczyciel` (`id_nauczyciela`),
+  ADD CONSTRAINT `oceny_ibfk_3` FOREIGN KEY (`id_ucznia`) REFERENCES `uczen` (`id_ucznia`);
+
+--
+-- Ograniczenia dla tabeli `uczen`
+--
+ALTER TABLE `uczen`
+  ADD CONSTRAINT `uczen_ibfk_1` FOREIGN KEY (`id_klasy`) REFERENCES `klasy` (`id_klasy`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
