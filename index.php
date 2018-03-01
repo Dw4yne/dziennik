@@ -52,7 +52,7 @@
                 </div>
 
     <div class="text-center">
-        <button class="btn btn-primary">Zaloguj <i class="fa fa-sign-in ml-1"></i></button>
+        <button class="btn btn-default">Zaloguj <i class="fa fa-sign-in ml-1"></i></button>
     </div>
 </form>
 
