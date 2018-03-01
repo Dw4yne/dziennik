@@ -32,19 +32,14 @@
 <div class="z-depth-2 container-flex tablearozmiar odstepMain">
   <?php
   include('connect.php');
-  $q = "SELECT * FROM oceny where id_ucznia=".$_SESSION['id'];
+  $q = "SELECT * FROM oceny left JOIN przedmiot on oceny.id_przedmiotu = przedmiot.id_przedmiotu where id_ucznia=".$_SESSION['id'];
+
   $result = $polaczenie->query($q);
-  echo '<pre>';
-  var_dump($_SESSION['id'] );
   $oceny = Array();
-  $oceny['Jez. Angielski'] = Array();
-  $oceny['Historia'] = Array();
-  $oceny['Witryny i aplikacje internetowe'] = Array();
   while($row = $result->fetch_assoc()) {
+    if(!isset($oceny[$row['przedmiot']])) $oceny[$row['przedmiot']] = Array();
       array_push($oceny[$row['przedmiot']], $row['ocena']);
   }
-  var_dump($oceny);
-  echo '</pre>';
    ?>
 <table class="table table-bordered" id="oceny">
   <thead class="" id="table_head">
