@@ -68,10 +68,11 @@
   <footer class="fixed-bottom">
 
     <div class="container">
-      <button type="button" class="btn btn-outline-primary waves-effect">Kontakt</button>
-      <a href="prezentacja.html"><button type="button" class="btn btn-outline-primary waves-effect">O nas</button></a>
-      <button type="button" class="btn btn-outline-primary waves-effect">Zdzichu</button>
-      <button type="button" class="btn btn-outline-primary waves-effect"><div id="txt"></div></button>
+      <button type="button" class="btn btn-outline-default waves-effect">Kontakt</button>
+      <a href="prezentacja.html"><button type="button" class="btn btn-outline-yellow waves-effect">O nas</button></a>
+      <button type="button" class="btn btn-outline-amber waves-effect">Zdzichu</button>
+      <button type="button" class="btn btn-outline-primary waves-effect">TEB</button>
+      <button type="button" class="btn btn-outline-info waves-effect"><div id="txt"></div></button>
 
     </div>
 
