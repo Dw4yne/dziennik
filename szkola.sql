@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Czas generowania: 01 Mar 2018, 10:10
+-- Czas generowania: 01 Mar 2018, 10:36
 -- Wersja serwera: 10.1.16-MariaDB
 -- Wersja PHP: 5.6.24
 
@@ -81,7 +81,9 @@ CREATE TABLE `oceny` (
 --
 
 INSERT INTO `oceny` (`id_oceny`, `id_przedmiotu`, `id_ucznia`, `ocena`, `id_nauczyciela`, `semestr`) VALUES
-(2, 6, 2, 5, 1, 1);
+(2, 6, 2, 5, 1, 1),
+(3, 5, 3, 5, 1, 1),
+(4, 5, 3, 5, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -130,7 +132,8 @@ CREATE TABLE `uczen` (
 --
 
 INSERT INTO `uczen` (`id_ucznia`, `imie`, `nazwisko`, `login`, `haslo`, `id_klasy`) VALUES
-(2, 'Kamil', 'Soliszewski', 'login', 'haslo', 0);
+(2, 'Kamil', 'Soliszewski', 'login', 'haslo', 0),
+(3, 'Dominik', 'Kowalski', 'admin', 'admin', 0);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -191,7 +194,7 @@ ALTER TABLE `nauczyciel`
 -- AUTO_INCREMENT dla tabeli `oceny`
 --
 ALTER TABLE `oceny`
-  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT dla tabeli `przedmiot`
 --
@@ -201,7 +204,7 @@ ALTER TABLE `przedmiot`
 -- AUTO_INCREMENT dla tabeli `uczen`
 --
 ALTER TABLE `uczen`
-  MODIFY `id_ucznia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_ucznia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Ograniczenia dla zrzutów tabel
 --
