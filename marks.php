@@ -59,8 +59,26 @@
       echo '<td>'.'<h4 class="h4-responsive">'.$klucz.'</h4>'.'</td>';
       echo '<td>';
       foreach ($przedmiot as $ocena) {
+        if ($ocena==1) {
+          $colorOceny = 'danger';
+          echo '<button class="btn btn-'.$colorOceny.'">'.$ocena.'</button>';
+        }if ($ocena==2) {
+          $colorOceny = 'deep-orange';
+          echo '<button class="btn btn-'.$colorOceny.'">'.$ocena.'</button>';
+        }if ($ocena==3) {
+          $colorOceny = 'amber';
+          echo '<button class="btn btn-'.$colorOceny.'">'.$ocena.'</button>';
+        }if ($ocena==4) {
+          $colorOceny = 'yellow';
+          echo '<button class="btn btn-'.$colorOceny.'">'.$ocena.'</button>';
+        }if ($ocena==5) {
+          $colorOceny = 'light-green';
+          echo '<button class="btn btn-'.$colorOceny.'">'.$ocena.'</button>';
+        }if ($ocena==6) {
+          $colorOceny = 'dark-green';
+          echo '<button class="btn btn-'.$colorOceny.'">'.$ocena.'</button>';
+        }
 
-        echo $ocena.", ";
       }
       echo '</td>';
       echo '</tr>';

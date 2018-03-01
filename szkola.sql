@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 01 Mar 2018, 10:36
--- Wersja serwera: 10.1.16-MariaDB
--- Wersja PHP: 5.6.24
+-- Czas generowania: 01 Mar 2018, 15:56
+-- Wersja serwera: 10.1.26-MariaDB
+-- Wersja PHP: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -38,7 +40,9 @@ CREATE TABLE `klasy` (
 --
 
 INSERT INTO `klasy` (`id_klasy`, `klasa`, `id_wychowawcy`, `profil`) VALUES
-(0, '3A', 1, 'Technik informatyk');
+(1, '3A', 1, 'Technik informatyk'),
+(2, '3E', 3, 'Technik fotografii'),
+(3, '3G', 2, 'Technik gamer');
 
 -- --------------------------------------------------------
 
@@ -59,7 +63,9 @@ CREATE TABLE `nauczyciel` (
 --
 
 INSERT INTO `nauczyciel` (`id_nauczyciela`, `imie`, `nazwisko`, `login`, `haslo`) VALUES
-(1, 'Justyna', 'Wołejko', 'loginj', 'loginj');
+(1, 'Justyna', 'Wołejko', 'loginj', 'loginj'),
+(2, 'Paweł', 'Zawadzki', 'machina', 'cyfrowa'),
+(3, 'Katarzyna', 'Wtulich', 'kata', 'wtuli');
 
 -- --------------------------------------------------------
 
@@ -81,9 +87,11 @@ CREATE TABLE `oceny` (
 --
 
 INSERT INTO `oceny` (`id_oceny`, `id_przedmiotu`, `id_ucznia`, `ocena`, `id_nauczyciela`, `semestr`) VALUES
-(2, 6, 2, 5, 1, 1),
+(1, 6, 2, 5, 1, 1),
+(2, 5, 3, 5, 1, 1),
 (3, 5, 3, 5, 1, 1),
-(4, 5, 3, 5, 1, 1);
+(4, 3, 2, 4, 1, 1),
+(5, 6, 2, 2, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -101,6 +109,8 @@ CREATE TABLE `przedmiot` (
 --
 
 INSERT INTO `przedmiot` (`id_przedmiotu`, `przedmiot`) VALUES
+(1, 'Podstawy przedsiębiorczości'),
+(2, 'Działalność gospodarcza w branży informatycznej'),
 (3, 'Biologia'),
 (4, 'Wiedza o społeczeństwie'),
 (5, 'Historia'),
@@ -108,7 +118,7 @@ INSERT INTO `przedmiot` (`id_przedmiotu`, `przedmiot`) VALUES
 (7, 'j. Niemiecki'),
 (8, 'j. Angielski'),
 (9, 'Matematyka'),
-(10, 'informatyka'),
+(10, 'Informatyka'),
 (11, 'Wychowanie fizyczne'),
 (12, 'Religia');
 
@@ -132,8 +142,9 @@ CREATE TABLE `uczen` (
 --
 
 INSERT INTO `uczen` (`id_ucznia`, `imie`, `nazwisko`, `login`, `haslo`, `id_klasy`) VALUES
-(2, 'Kamil', 'Soliszewski', 'login', 'haslo', 0),
-(3, 'Dominik', 'Kowalski', 'admin', 'admin', 0);
+(1, 'Damian', 'Prądziński', 'prda', 'prda', 1),
+(2, 'Kamil', 'Soliszewski', 'login', 'haslo', 1),
+(3, 'Dominik', 'Kowalski', 'admin', 'admin', 1);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -184,27 +195,32 @@ ALTER TABLE `uczen`
 -- AUTO_INCREMENT dla tabeli `klasy`
 --
 ALTER TABLE `klasy`
-  MODIFY `id_klasy` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_klasy` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT dla tabeli `nauczyciel`
 --
 ALTER TABLE `nauczyciel`
-  MODIFY `id_nauczyciela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_nauczyciela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT dla tabeli `oceny`
 --
 ALTER TABLE `oceny`
-  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT dla tabeli `przedmiot`
 --
 ALTER TABLE `przedmiot`
   MODIFY `id_przedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT dla tabeli `uczen`
 --
 ALTER TABLE `uczen`
   MODIFY `id_ucznia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- Ograniczenia dla zrzutów tabel
 --
@@ -228,6 +244,7 @@ ALTER TABLE `oceny`
 --
 ALTER TABLE `uczen`
   ADD CONSTRAINT `uczen_ibfk_1` FOREIGN KEY (`id_klasy`) REFERENCES `klasy` (`id_klasy`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
