@@ -37,7 +37,7 @@ if ($wynik = @$polaczenie->query($sql))
 
 
     $wiersz = $wynik->fetch_assoc();
-    $_SESSION['id'] = $wiersz['idUcznia'];
+    $_SESSION['id'] = $wiersz['id_ucznia'];
     $_SESSION['imie'] = $wiersz['imie'];
     $_SESSION['nazwisko'] = $wiersz['nazwisko'];
     $_SESSION['loginzmienna'] = $wiersz['login'];
