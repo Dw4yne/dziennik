@@ -26,7 +26,7 @@
 
 <body>
 
-  <?php include('navbar.php'); ?>
+  <?php include('navbar.php');?>
 
 
 <div class="z-depth-2 container-flex tablearozmiar odstepMain">
