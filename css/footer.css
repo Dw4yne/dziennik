@@ -10,7 +10,6 @@
   color: white;
   padding: 100px;
 
-<<<<<<< HEAD
 }
 
 .footerIcon{
@@ -35,30 +34,4 @@
 .miejsceNaLogo{
   margin-top: 20px;
   color: #5b5b5b;
-=======
-}
-
-.footerIcon{
-    margin-bottom: 20px;
-    background-color: #5b5b5b;
-}
-
-.marginIcon{
-  margin-left: 25px;
-}
-
-.infoFooter{
-  text-align: center;
-}
-
-.infoFooter{
-
-  font-family: 'Lalezar', cursive;
-
-}
-
-.footerLogo{
-  border: solid #5b5b5b 3px;
-  width: 200px;
->>>>>>> fed7189dd79fda8930cebf184c1540f83901728c
 }
