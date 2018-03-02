@@ -1,10 +1,9 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet">
 </head>
 
 <link href="css/footer.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet">
   <div class="container-fluid footer1">
     <div class="text-center">
       <a class="btn-floating btn-lg purple-gradient footerIcon rounded-circle"><i class="fa fa-facebook-square"></i></a>
