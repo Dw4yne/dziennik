@@ -11,12 +11,20 @@
       <a class="btn-floating btn-lg purple-gradient footerIcon marginIcon rounded-circle"><i class="fa fa-github"></i></a>
       <a class="btn-floating btn-lg purple-gradient footerIcon marginIcon rounded-circle"><i class="fa fa-instagram"></i></a>
 
+<<<<<<< HEAD
       <h5 class="h5-responsive infoFooter">KONTAKT</h5>
       <h5 class="h5-responsive infoFooter">BLOG</h5>
       <h5 class="h5-responsive infoFooter">O NAS</h5>
       <h5 class="h5-responsive infoFooter">FAQ</h5>
       <h1 class="h1-responsive infoFooter miejsceNaLogo">MIEJSCE NA LOGO</br> #PEJDŻ_PLS</h1>
 
+=======
+      <h3 class="h5-responsive infoFooter">KONTAKT</h3>
+      <h3 class="h5-responsive infoFooter">BLOG</h3>
+      <h3 class="h5-responsive infoFooter">O NAS</h3>
+      <h3 class="h5-responsive infoFooter">FAQ</h3>
+      <img class="footerLogo" src="img/miejscenalogo.png">
+>>>>>>> fed7189dd79fda8930cebf184c1540f83901728c
     </div>
   </div>
 
