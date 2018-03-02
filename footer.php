@@ -1,54 +1,23 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet">
 </head>
 
 <link href="css/footer.css" rel="stylesheet">
-<div class="container-fluid footer1">
-  <div class="row">
-    <div class="col-md-3">
-        <h5 class="title"><strong>O projekcie: </strong></h5>
-        <ul class="list-group lewa">
-          <li class="list-group Kolumna">
-            <p>Nie ma mnie dla Ciebie, <s>jebać</s> przeznaczenie</p>
-            <p>Wszystko się zmienia, na projekt nie mam już miejsca</p>
-            <p>Nie mam go, nie mam go, nie mam</p>
-            Siemanko, siemanko i siema!
-          </li>
-        </ul>
+  <div class="container-fluid footer1">
+    <div class="text-center">
+      <a class="btn-floating btn-lg purple-gradient footerIcon rounded-circle"><i class="fa fa-facebook-square"></i></a>
+      <a class="btn-floating btn-lg purple-gradient footerIcon marginIcon rounded-circle"><i class="fa fa-twitter"></i></a>
+      <a class="btn-floating btn-lg purple-gradient footerIcon marginIcon rounded-circle"><i class="fa fa-github"></i></a>
+      <a class="btn-floating btn-lg purple-gradient footerIcon marginIcon rounded-circle"><i class="fa fa-instagram"></i></a>
+
+      <h5 class="h5-responsive infoFooter">KONTAKT</h5>
+      <h5 class="h5-responsive infoFooter">BLOG</h5>
+      <h5 class="h5-responsive infoFooter">O NAS</h5>
+      <h5 class="h5-responsive infoFooter">FAQ</h5>
+      <h1 class="h1-responsive infoFooter miejsceNaLogo">MIEJSCE NA LOGO</br> #PEJDŻ_PLS</h1>
+
     </div>
-
-    <div class="col-md-3">
-        <h5 class="title"><strong>Social media: </strong></h5>
-        <ul class="list-group">
-          <ul class="list-group">
-              <a href="https://www.facebook.com/"><img class="fblogo img-thumbnail" data-toggle="tooltip" title="Facebook" src="img/facebook-icon.png"></a>
-              <a href="https://www.youtube.com/"><img class="ytlogo img-thumbnail" src="img/youtube-icon.png"></a>
-              <a href="https://github.com/"><img class="githublogo img-thumbnail" src="img/github-icon.svg"></a>
-              <a href="https://plus.google.com/"><img class="gpluslogo img-thumbnail" src="img/google-icon.png"></a>
-            </ul>
-    </div>
-
-    <div class="col-md-3">
-        <h5 class="title"><strong>Dokumentacja: </strong></h5>
-        <ul class="list-group srodek">
-            <a href="https://mdbootstrap.com/"><img alt="mdbootstrap" class="mdblogo" src="https://mdbootstrap.com/img/logo/mdb-transparent.png"></a>
-            <a href="https://getbootstrap.com/"><img  alt="bootstrap" class="blogo" src="https://logoepscdnphoto.b-cdn.net/wp-content/uploads/2016/12/bootstrap-logo.png"></a>
-            <a href="https://www.mysql.com/"><img alt="mysql" class="mysqlogo" src="https://upload.wikimedia.org/wikipedia/en/thumb/6/62/MySQL.svg/1200px-MySQL.svg.png"></a>
-          </ul>
-    </div>
-
-    <div class="col-md-3">
-        <h5 class="title"><strong>O nas: </strong></h5>
-        <ul class="list-group lewa">
-            <li class="list-group Kolumna"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"> E-Mail</i></li>
-            <li class="list-group Kolumna"><i class="fa fa-users fa-lg" aria-hidden="true"> Team</i></li>
-            <li class="list-group Kolumna"><i class="fa fa-dollar fa-lg" aria-hidden="true"> Dotacje</i></li>
-          </ul>
-    </div>
-
-  </div>
-
   </div>
 
 

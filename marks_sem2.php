@@ -49,7 +49,7 @@
   <thead class="" id="table_head">
     <tr class="table pasektabeli">
       <th class="text-center przedmiotytabela"><p class="h5">Przedmiot</p></th>
-      <th class="text-center ocenysemestry"><p class="h5">1 Semestr</p></th>
+      <th class="text-center ocenysemestry"><p class="h5">2 Semestr</p></th>
     </tr>
   </thead>
   <tbody>
@@ -95,8 +95,8 @@
           <ul class="pagination pagination-circle pg-teal mb-0">
 
               <!--Numbers-->
-              <li class="page-item active"><a class="page-link">1</a></li>
-              <li class="page-item"><a href="marks_sem2.php" class="page-link">2</a></li>
+              <li class="page-item"><a href="marks.php" class="page-link">1</a></li>
+              <li class="page-item active"><a class="page-link">2</a></li>
 
           </ul>
       </nav>
