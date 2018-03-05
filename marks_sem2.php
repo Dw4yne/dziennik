@@ -78,7 +78,6 @@
           $colorOceny = 'dark-green';
           echo '<button class="btn btn-'.$colorOceny.'">'.$ocena.'</button>';
         }
-
       }
       echo '</td>';
       echo '</tr>';
