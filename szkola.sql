@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 01 Mar 2018, 15:56
+-- Czas generowania: 05 Mar 2018, 21:15
 -- Wersja serwera: 10.1.26-MariaDB
 -- Wersja PHP: 7.1.9
 
@@ -91,7 +91,12 @@ INSERT INTO `oceny` (`id_oceny`, `id_przedmiotu`, `id_ucznia`, `ocena`, `id_nauc
 (2, 5, 3, 5, 1, 1),
 (3, 5, 3, 5, 1, 1),
 (4, 3, 2, 4, 1, 1),
-(5, 6, 2, 2, 1, 1);
+(5, 6, 2, 2, 1, 1),
+(6, 11, 2, 1, 3, 1),
+(7, 9, 2, 3, 3, 1),
+(8, 9, 2, 6, 3, 1),
+(9, 6, 2, 3, 1, 1),
+(10, 3, 2, 2, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -195,7 +200,7 @@ ALTER TABLE `uczen`
 -- AUTO_INCREMENT dla tabeli `klasy`
 --
 ALTER TABLE `klasy`
-  MODIFY `id_klasy` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_klasy` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `nauczyciel`
@@ -207,7 +212,7 @@ ALTER TABLE `nauczyciel`
 -- AUTO_INCREMENT dla tabeli `oceny`
 --
 ALTER TABLE `oceny`
-  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT dla tabeli `przedmiot`
