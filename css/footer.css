@@ -1,20 +1,35 @@
 .copyright{
-  background-color: #5b5b5b;
+  background-color: #333333;
   text-align: center;
   color: white;
   padding: 5px;
 }
 
 .footer1{
-  background-color: #333333;
+  background-color: #4f4f4f;
   color: white;
-  padding: 100px;
+  padding: 50px;
 
 }
 
 .footerIcon{
     margin-bottom: 20px;
-    background-color: #5b5b5b;
+}
+
+.facebook{
+  background-color: #4267B2;
+}
+
+.twitter{
+  background-color: #5DBCEE;
+}
+
+.github{
+  background-color: #000000;
+}
+
+.instagram{
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
 }
 
 .marginIcon{
