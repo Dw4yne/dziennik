@@ -24,6 +24,10 @@
   background-color: #5DBCEE;
 }
 
+.googlePlus{
+  background-color: #dd4b39;
+}
+
 .github{
   background-color: #000000;
 }
@@ -38,13 +42,10 @@
 
 .infoFooter{
   text-align: center;
-}
-
-.infoFooter{
-
   font-family: 'Lalezar', cursive;
-
 }
+
+
 
 .miejsceNaLogo{
   margin-top: 20px;
