@@ -55,7 +55,7 @@
   <tbody>
     <?php
     foreach ($oceny as $klucz => $przedmiot) {
-      echo '<tr class="hoverable">';
+      echo '<tr>';
       echo '<td>'.'<h4 class="h4-responsive">'.$klucz.'</h4>'.'</td>';
       echo '<td>';
       foreach ($przedmiot as $ocena) {
@@ -87,7 +87,7 @@
   </tbody>
 </table>
   <!--Bottom Table UI-->
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center bottomTable">
 
       <!--Pagination -->
       <nav class="my-3 pt-0">
@@ -102,8 +102,6 @@
       <!--/Pagination -->
 
   </div>
-</div>
-
 </div>
 
 

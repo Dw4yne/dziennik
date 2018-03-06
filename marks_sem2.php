@@ -55,7 +55,7 @@
   <tbody>
     <?php
     foreach ($oceny as $klucz => $przedmiot) {
-      echo '<tr class="hoverable">';
+      echo '<tr>';
       echo '<td>'.'<h4 class="h4-responsive">'.$klucz.'</h4>'.'</td>';
       echo '<td>';
       foreach ($przedmiot as $ocena) {

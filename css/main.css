@@ -57,7 +57,6 @@ background-color: #d5f6f2;
 
 #oceny{
   margin-top: 3%;
-
 }
 
 #table_head{
@@ -69,7 +68,6 @@ background-color: #d5f6f2;
 .tablearozmiar{
   width: 90%;
   margin-left: 5%;
-
 }
 .nr{
   width: 4%;
@@ -113,6 +111,7 @@ background-color: #d5f6f2;
 .odstepMain{
   margin-top: 80px;
   margin-bottom: 80px;
+  background-color: white;
 }
 
 .podkresl{

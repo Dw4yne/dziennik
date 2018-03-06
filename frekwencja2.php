@@ -41,70 +41,70 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="hoverable">
+    <tr>
       <th class="text-center" scope="row">21.11.2017</th>
       <td><h4 class="h4-responsive"></h4></td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
-    <tr class="hoverable">
+    <tr>
       <th class="text-center" scope="row">-</th>
       <td><h4 class="h4-responsive"></h4></td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
-    <tr class="hoverable">
+    <tr>
       <th class="text-center" scope="row">-</th>
       <td><h4 class="h4-responsive"></h4></td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
-    <tr class="hoverable">
+    <tr>
       <th class="text-center" scope="row">-</th>
       <td><h4 class="h4-responsive"></h4></td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
-    <tr class="hoverable">
+    <tr>
       <th class="text-center" scope="row">-</th>
       <td><h4 class="h4-responsive"></h4></td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
-    <tr class="hoverable">
+    <tr>
       <th class="text-center" scope="row">-</th>
       <td><h4 class="h4-responsive"></h4></td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
-    <tr class="hoverable">
+    <tr>
       <th class="text-center" scope="row">-</th>
       <td><h4 class="h4-responsive"></h4></td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
-    <tr class="hoverable">
+    <tr>
       <th class="text-center" scope="row">-</th>
       <td><h4 class="h4-responsive"></h4></td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
-    <tr class="hoverable">
+    <tr>
       <th class="text-center" scope="row">-</th>
       <td><h4 class="h4-responsive"></h4></td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
-    <tr class="hoverable">
+    <tr>
       <th class="text-center" scope="row">-</th>
       <td><h4 class="h4-responsive"></h4></td>
       <td></td>
@@ -115,7 +115,7 @@
 </table>
 
     <!--Bottom Table UI-->
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center bottomTable">
 
         <!--Pagination -->
         <nav class="my-3 pt-0">
