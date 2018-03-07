@@ -11,8 +11,8 @@
               <li class="nav-item podkresl">
                   <a class="nav-link" href="main.php"><i class="fa fa-home fa-lg" aria-hidden="true"></i>  Strona główna<span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item podkresl">
-                  <a class="nav-link" href="features.php"><i class="fa fa-calendar-check-o fa-lg" aria-hidden="true"></i>  Aktualności</a>
+              <li class="nav-item">
+                  <a class="nav-link disabled"><i class="fa fa-calendar-check-o fa-lg"></i>  Aktualności</a>
               </li>
               <li class="nav-item podkresl">
                   <a class="nav-link" href="marks.php"><i class="fa fa-bar-chart fa-lg" aria-hidden="true"></i>  Oceny</a>
@@ -30,7 +30,7 @@
                   <div class="dropdown-menu">
 
                       <a class="dropdown-item podkresl dropActive" href="dodawanieOcen.php"><p class="dropLine">Ocena</p></a>
-                      <a class="dropdown-item podkresl dropActive" href="dodawanieAkt.php"><p class="dropLine">Aktualności</p></a>
+                      <a class="dropdown-item disabled" href="#"><p class="dropLine">Aktualności</p></a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item podkresl dropActive" href="dodawanieUcznia.php"><p class="dropLine">Uczeń</p></a>
                       <a class="dropdown-item podkresl dropActive" href="dodawanieNauczyciela.php"><p class="dropLine">Nauczyciel</p></a>

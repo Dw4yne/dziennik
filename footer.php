@@ -17,7 +17,7 @@
       <h5 class="h5-responsive infoFooter">BLOG</h5>
       <h5 class="h5-responsive infoFooter">O NAS</h5>
       <h5 class="h5-responsive infoFooter">FAQ</h5>
-      <h1 class="h1-responsive infoFooter miejsceNaLogo">MIEJSCE NA LOGO</br> #PEJDŻ_PLS</h1>
+      <img src="img/logo.png" style="height: 115px;">
 
     </div>
   </div>

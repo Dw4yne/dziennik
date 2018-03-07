@@ -1,11 +1,13 @@
+.ramka{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: #4f4f4f 2px solid;
+}
+
 .page-link, .page-link:hover{
   color: black;
 }
 
-.blog{
-  margin-left: 5%;
-  margin-right: 5%;
-}
 
 .carousel {
   width: 1110px;
@@ -41,13 +43,13 @@ background-color: #d5f6f2;
 
 }*/
 
-.nav-link{
+/* .nav-link{
   color:  black !important;
-}
+} */
 
-.navbar-brand{
+/* .navbar-brand{
   color:  black !important;
-}
+} */
 
 .glownaguzik{
   background-color: transparent !important;
