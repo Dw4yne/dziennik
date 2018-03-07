@@ -39,8 +39,8 @@
               </li>
           </ul>
           <ul class="navbar-nav nav-flex-icons">
-            <li class="nav-item example hoverable">
-                <a class="nav-link"><i class="fa fa-user-o fa-lg"><?php echo "   ".$_SESSION['imie']."  ".$_SESSION['nazwisko']; ?></i></a>
+            <li class="nav-item example">
+                <a class="nav-link"><i class="fa fa-user-o fa-lg"><?php echo '<font face="Roboto">'."   ".$_SESSION['imie']."  ".$_SESSION['nazwisko']."</font>"; ?></i></a>
             </li>
             <li class="nav-item example hoverable">
             <a class="nav-link" href="wyloguj.php"><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i></a>

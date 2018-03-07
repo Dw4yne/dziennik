@@ -9,7 +9,7 @@
 
       <a class="btn-floating btn-lg footerIcon facebook rounded-circle"><i class="fa fa-facebook-square"></i></a>
       <a class="btn-floating btn-lg footerIcon github marginIcon rounded-circle"><i class="fa fa-github"></i></a>
-      <a class="btn-floating btn-lg footerIcon googlePlus marginIcon rounded-circle"><i class="fa fa-google"></i></a>
+      <a class="btn-floating btn-lg footerIcon googlePlus marginIconGPlus marginIcon rounded-circle"><i class="fa fa-google-plus"></i></a>
       <a class="btn-floating btn-lg footerIcon twitter marginIcon rounded-circle"><i class="fa fa-twitter"></i></a>
       <a class="btn-floating btn-lg footerIcon instagram marginIcon rounded-circle"><i class="fa fa-instagram"></i></a>
 
