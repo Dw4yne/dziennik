@@ -22,7 +22,7 @@
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/profil.css" rel="stylesheet">
-    
+
 </head>
 
 <body>
