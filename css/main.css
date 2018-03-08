@@ -1,3 +1,7 @@
+.news{
+  color: grey;
+}
+
 .ramka{
   padding-top: 20px;
   padding-bottom: 20px;
@@ -23,7 +27,7 @@
 
 body{
   overflow-x: hidden;
-  background-image: url(../img/tlo2.png);
+  background-image: url(../img/tlo.png);
 
 }
 .card{
