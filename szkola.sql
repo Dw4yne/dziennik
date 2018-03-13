@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Czas generowania: 05 Mar 2018, 21:15
--- Wersja serwera: 10.1.26-MariaDB
--- Wersja PHP: 7.1.9
+-- Czas generowania: 13 Mar 2018, 21:20
+-- Wersja serwera: 10.1.19-MariaDB
+-- Wersja PHP: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -55,17 +53,21 @@ CREATE TABLE `nauczyciel` (
   `imie` text COLLATE utf8_unicode_ci NOT NULL,
   `nazwisko` text COLLATE utf8_unicode_ci NOT NULL,
   `login` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `haslo` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+  `haslo` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `PESEL` char(11) COLLATE utf8_unicode_ci NOT NULL,
+  `Adres_zamieszkania` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `numer_kontaktowy` bigint(12) NOT NULL,
+  `komentarz` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `nauczyciel`
 --
 
-INSERT INTO `nauczyciel` (`id_nauczyciela`, `imie`, `nazwisko`, `login`, `haslo`) VALUES
-(1, 'Justyna', 'Wołejko', 'loginj', 'loginj'),
-(2, 'Paweł', 'Zawadzki', 'machina', 'cyfrowa'),
-(3, 'Katarzyna', 'Wtulich', 'kata', 'wtuli');
+INSERT INTO `nauczyciel` (`id_nauczyciela`, `imie`, `nazwisko`, `login`, `haslo`, `PESEL`, `Adres_zamieszkania`, `numer_kontaktowy`, `komentarz`) VALUES
+(1, 'Justyna', 'Wołejko', 'loginj', 'loginj', '', '', 0, ''),
+(2, 'Paweł', 'Zawadzki', 'machina', 'cyfrowa', '', '', 0, ''),
+(3, 'Katarzyna', 'Wtulich', 'kata', 'wtuli', '', '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -92,11 +94,7 @@ INSERT INTO `oceny` (`id_oceny`, `id_przedmiotu`, `id_ucznia`, `ocena`, `id_nauc
 (3, 5, 3, 5, 1, 1),
 (4, 3, 2, 4, 1, 1),
 (5, 6, 2, 2, 1, 1),
-(6, 11, 2, 1, 3, 1),
-(7, 9, 2, 3, 3, 1),
-(8, 9, 2, 6, 3, 1),
-(9, 6, 2, 3, 1, 1),
-(10, 3, 2, 2, 3, 2);
+(6, 2, 3, 5, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -139,17 +137,21 @@ CREATE TABLE `uczen` (
   `nazwisko` text COLLATE utf8_unicode_ci NOT NULL,
   `login` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `haslo` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `id_klasy` int(11) NOT NULL
+  `id_klasy` int(11) NOT NULL,
+  `PESEL` char(11) COLLATE utf8_unicode_ci NOT NULL,
+  `Adres_zamieszkania` int(50) NOT NULL,
+  `numer_kontaktowy` bigint(12) NOT NULL,
+  `komentarz` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `uczen`
 --
 
-INSERT INTO `uczen` (`id_ucznia`, `imie`, `nazwisko`, `login`, `haslo`, `id_klasy`) VALUES
-(1, 'Damian', 'Prądziński', 'prda', 'prda', 1),
-(2, 'Kamil', 'Soliszewski', 'login', 'haslo', 1),
-(3, 'Dominik', 'Kowalski', 'admin', 'admin', 1);
+INSERT INTO `uczen` (`id_ucznia`, `imie`, `nazwisko`, `login`, `haslo`, `id_klasy`, `PESEL`, `Adres_zamieszkania`, `numer_kontaktowy`, `komentarz`) VALUES
+(1, 'Damian', 'Prądziński', 'prda', 'prda', 1, '', 0, 0, ''),
+(2, 'Kamil', 'Soliszewski', 'login', 'haslo', 1, '', 0, 0, ''),
+(3, 'Dominik', 'Kowalski', 'admin', 'admin', 1, '', 0, 0, '');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -201,31 +203,26 @@ ALTER TABLE `uczen`
 --
 ALTER TABLE `klasy`
   MODIFY `id_klasy` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT dla tabeli `nauczyciel`
 --
 ALTER TABLE `nauczyciel`
   MODIFY `id_nauczyciela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT dla tabeli `oceny`
 --
 ALTER TABLE `oceny`
-  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
+  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT dla tabeli `przedmiot`
 --
 ALTER TABLE `przedmiot`
   MODIFY `id_przedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
 --
 -- AUTO_INCREMENT dla tabeli `uczen`
 --
 ALTER TABLE `uczen`
   MODIFY `id_ucznia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- Ograniczenia dla zrzutów tabel
 --
@@ -249,7 +246,6 @@ ALTER TABLE `oceny`
 --
 ALTER TABLE `uczen`
   ADD CONSTRAINT `uczen_ibfk_1` FOREIGN KEY (`id_klasy`) REFERENCES `klasy` (`id_klasy`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
