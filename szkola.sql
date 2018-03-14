@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.7
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 13 Mar 2018, 21:20
--- Wersja serwera: 10.1.19-MariaDB
--- Wersja PHP: 5.6.28
+-- Czas generowania: 14 Mar 2018, 22:32
+-- Wersja serwera: 10.1.30-MariaDB
+-- Wersja PHP: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -89,12 +91,12 @@ CREATE TABLE `oceny` (
 --
 
 INSERT INTO `oceny` (`id_oceny`, `id_przedmiotu`, `id_ucznia`, `ocena`, `id_nauczyciela`, `semestr`) VALUES
-(1, 6, 2, 5, 1, 1),
-(2, 5, 3, 5, 1, 1),
-(3, 5, 3, 5, 1, 1),
-(4, 3, 2, 4, 1, 1),
-(5, 6, 2, 2, 1, 1),
-(6, 2, 3, 5, 2, 1);
+(12, 3, 2, 1, 3, 1),
+(13, 2, 2, 2, 3, 1),
+(14, 5, 2, 3, 2, 1),
+(15, 10, 2, 4, 2, 1),
+(16, 8, 2, 5, 1, 1),
+(17, 9, 2, 6, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -158,7 +160,7 @@ INSERT INTO `uczen` (`id_ucznia`, `imie`, `nazwisko`, `login`, `haslo`, `id_klas
 --
 
 --
--- Indexes for table `klasy`
+-- Indeksy dla tabeli `klasy`
 --
 ALTER TABLE `klasy`
   ADD PRIMARY KEY (`id_klasy`),
@@ -166,13 +168,13 @@ ALTER TABLE `klasy`
   ADD KEY `id_wychowawcy` (`id_wychowawcy`);
 
 --
--- Indexes for table `nauczyciel`
+-- Indeksy dla tabeli `nauczyciel`
 --
 ALTER TABLE `nauczyciel`
   ADD PRIMARY KEY (`id_nauczyciela`);
 
 --
--- Indexes for table `oceny`
+-- Indeksy dla tabeli `oceny`
 --
 ALTER TABLE `oceny`
   ADD PRIMARY KEY (`id_oceny`),
@@ -181,14 +183,14 @@ ALTER TABLE `oceny`
   ADD KEY `id_nauczyciela` (`id_nauczyciela`);
 
 --
--- Indexes for table `przedmiot`
+-- Indeksy dla tabeli `przedmiot`
 --
 ALTER TABLE `przedmiot`
   ADD PRIMARY KEY (`id_przedmiotu`),
   ADD KEY `id_przedmiotu` (`id_przedmiotu`);
 
 --
--- Indexes for table `uczen`
+-- Indeksy dla tabeli `uczen`
 --
 ALTER TABLE `uczen`
   ADD PRIMARY KEY (`id_ucznia`),
@@ -203,26 +205,31 @@ ALTER TABLE `uczen`
 --
 ALTER TABLE `klasy`
   MODIFY `id_klasy` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT dla tabeli `nauczyciel`
 --
 ALTER TABLE `nauczyciel`
   MODIFY `id_nauczyciela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT dla tabeli `oceny`
 --
 ALTER TABLE `oceny`
-  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
 --
 -- AUTO_INCREMENT dla tabeli `przedmiot`
 --
 ALTER TABLE `przedmiot`
   MODIFY `id_przedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT dla tabeli `uczen`
 --
 ALTER TABLE `uczen`
   MODIFY `id_ucznia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- Ograniczenia dla zrzutów tabel
 --
@@ -246,6 +253,7 @@ ALTER TABLE `oceny`
 --
 ALTER TABLE `uczen`
   ADD CONSTRAINT `uczen_ibfk_1` FOREIGN KEY (`id_klasy`) REFERENCES `klasy` (`id_klasy`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
