@@ -59,8 +59,6 @@ background-color: #d5f6f2;
   background-color: transparent !important;
 }
 
-
-
 #oceny{
   margin-top: 3%;
 }
@@ -68,27 +66,34 @@ background-color: #d5f6f2;
 #table_head{
   color: white ;
 }
+
 .pasektabeli{
   background-color: #2bbbad !important;
 }
+
 .tablearozmiar{
   width: 90%;
   margin-left: 5%;
   background-color: white;
 }
+
 .nr{
   width: 4%;
 }
+
 .ocenysemestry{
   width: 40%;
 }
+
 .przedmiotytabela{
   width: 20%;
 }
+
 .glowna{
   margin-top: 100px;
   width: 100%;
 }
+
 .cardy{
   margin-top: 50px;
   margin-bottom: 50px;
