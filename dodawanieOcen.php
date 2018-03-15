@@ -41,20 +41,19 @@
           }
          ?>
         <div class="container row">
-          <div class="form-group col-3">
-            <?php
-            include('connect.php');
-            $q = "SELECT * FROM klasy";
-            $result = $polaczenie->query($q);
-            if($result != false){
-              $klasy = Array();
-              while($row = $result->fetch_assoc()) {
-                array_push($klasy, $row['klasa']);
-              }
-              ?>
+          <div class="form-group col-4">
               <label for="exampleSelect1">Klasa</label>
               <select class="form-control" id="exampleSelect1">
               <?php
+              include('connect.php');
+              $q = "SELECT * FROM klasy";
+              $result = $polaczenie->query($q);
+              if($result != false){
+                $klasy = Array();
+                while($row = $result->fetch_assoc()) {
+                  array_push($klasy, $row['klasa']);
+                }
+
               foreach ($klasy as $klasa) {
                 echo '<option>'.$klasa.'</option>';
               }
@@ -63,7 +62,7 @@
             </select>
           </div>
           <!-- Waga oceny -->
-          <div class="form-group col-3">
+          <div class="form-group col-4">
             <label for="exampleSelect1">Waga</label>
             <select class="form-control" id="exampleSelect1" name="waga">
               <option selected value=""> Waga </option>
@@ -77,7 +76,7 @@
 
 
           <!-- Ocena -->
-          <div class="form-group col-3">
+          <div class="form-group col-4">
             <label for="exampleSelect1">Ocena</label>
             <select class="form-control" id="exampleSelect1" name="ocena">
               <option selected  value="" disactive> Ocena </option>
@@ -96,7 +95,7 @@
 
           <!-- Imię -->
           <div class="form-group col-md ">
-            <label for="exampleSelect1">Imię</label>
+            <label for="exampleSelect1">Uczeń (imię i nazwisko)</label>
             <select class="form-control" id="exampleSelect1">
             <?php
             include('connect.php');
@@ -116,16 +115,6 @@
                ?>
             </select>
           </div>
-        </div>
-
-        <!-- Nazwisko -->
-        <div class="form-group col-md ">
-          <label for="exampleSelect1">Nazwisko</label>
-          <select class="form-control" id="exampleSelect1">
-            <option>Ciarka</option>
-            <option>Flizikowski</option>
-            <option>Kędziora</option>
-          </select>
         </div>
       </div>
       <div class="md-form">

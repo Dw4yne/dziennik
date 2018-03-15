@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 05 Mar 2018, 21:15
--- Wersja serwera: 10.1.26-MariaDB
--- Wersja PHP: 7.1.9
+-- Czas generowania: 15 Mar 2018, 20:37
+-- Wersja serwera: 10.1.30-MariaDB
+-- Wersja PHP: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,10 +30,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `klasy` (
   `id_klasy` int(11) NOT NULL,
-  `klasa` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `klasa` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `id_wychowawcy` int(11) NOT NULL,
-  `profil` text COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `profil` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Zrzut danych tabeli `klasy`
@@ -52,20 +52,24 @@ INSERT INTO `klasy` (`id_klasy`, `klasa`, `id_wychowawcy`, `profil`) VALUES
 
 CREATE TABLE `nauczyciel` (
   `id_nauczyciela` int(11) NOT NULL,
-  `imie` text COLLATE utf8_unicode_ci NOT NULL,
-  `nazwisko` text COLLATE utf8_unicode_ci NOT NULL,
-  `login` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `haslo` varchar(100) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `imie` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `nazwisko` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `login` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `haslo` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `PESEL` char(11) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Adres_zamieszkania` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `numer_kontaktowy` bigint(12) NOT NULL,
+  `komentarz` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Zrzut danych tabeli `nauczyciel`
 --
 
-INSERT INTO `nauczyciel` (`id_nauczyciela`, `imie`, `nazwisko`, `login`, `haslo`) VALUES
-(1, 'Justyna', 'Wołejko', 'loginj', 'loginj'),
-(2, 'Paweł', 'Zawadzki', 'machina', 'cyfrowa'),
-(3, 'Katarzyna', 'Wtulich', 'kata', 'wtuli');
+INSERT INTO `nauczyciel` (`id_nauczyciela`, `imie`, `nazwisko`, `login`, `haslo`, `PESEL`, `Adres_zamieszkania`, `numer_kontaktowy`, `komentarz`) VALUES
+(1, 'Justyna', 'Wołejko', 'loginj', 'loginj', '', '', 0, ''),
+(2, 'Paweł', 'Zawadzki', 'machina', 'cyfrowa', '', '', 0, ''),
+(3, 'Katarzyna', 'Wtulich', 'kata', 'wtuli', '', '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -78,25 +82,22 @@ CREATE TABLE `oceny` (
   `id_przedmiotu` int(11) NOT NULL,
   `id_ucznia` int(11) NOT NULL,
   `ocena` float NOT NULL,
+  `waga` int(11) DEFAULT NULL,
   `id_nauczyciela` int(11) NOT NULL,
   `semestr` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Zrzut danych tabeli `oceny`
 --
 
-INSERT INTO `oceny` (`id_oceny`, `id_przedmiotu`, `id_ucznia`, `ocena`, `id_nauczyciela`, `semestr`) VALUES
-(1, 6, 2, 5, 1, 1),
-(2, 5, 3, 5, 1, 1),
-(3, 5, 3, 5, 1, 1),
-(4, 3, 2, 4, 1, 1),
-(5, 6, 2, 2, 1, 1),
-(6, 11, 2, 1, 3, 1),
-(7, 9, 2, 3, 3, 1),
-(8, 9, 2, 6, 3, 1),
-(9, 6, 2, 3, 1, 1),
-(10, 3, 2, 2, 3, 2);
+INSERT INTO `oceny` (`id_oceny`, `id_przedmiotu`, `id_ucznia`, `ocena`, `waga`, `id_nauczyciela`, `semestr`) VALUES
+(12, 3, 2, 1, NULL, 3, 1),
+(13, 2, 2, 2, NULL, 3, 1),
+(14, 5, 2, 3, NULL, 2, 1),
+(15, 10, 2, 4, NULL, 2, 1),
+(16, 8, 2, 5, NULL, 1, 1),
+(17, 9, 2, 6, NULL, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -106,8 +107,8 @@ INSERT INTO `oceny` (`id_oceny`, `id_przedmiotu`, `id_ucznia`, `ocena`, `id_nauc
 
 CREATE TABLE `przedmiot` (
   `id_przedmiotu` int(11) NOT NULL,
-  `przedmiot` text COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `przedmiot` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Zrzut danych tabeli `przedmiot`
@@ -135,28 +136,32 @@ INSERT INTO `przedmiot` (`id_przedmiotu`, `przedmiot`) VALUES
 
 CREATE TABLE `uczen` (
   `id_ucznia` int(11) NOT NULL,
-  `imie` text COLLATE utf8_unicode_ci NOT NULL,
-  `nazwisko` text COLLATE utf8_unicode_ci NOT NULL,
-  `login` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `haslo` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `id_klasy` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `imie` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `nazwisko` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `login` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `haslo` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `id_klasy` int(11) NOT NULL,
+  `PESEL` char(11) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Adres_zamieszkania` int(50) NOT NULL,
+  `numer_kontaktowy` bigint(12) NOT NULL,
+  `komentarz` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Zrzut danych tabeli `uczen`
 --
 
-INSERT INTO `uczen` (`id_ucznia`, `imie`, `nazwisko`, `login`, `haslo`, `id_klasy`) VALUES
-(1, 'Damian', 'Prądziński', 'prda', 'prda', 1),
-(2, 'Kamil', 'Soliszewski', 'login', 'haslo', 1),
-(3, 'Dominik', 'Kowalski', 'admin', 'admin', 1);
+INSERT INTO `uczen` (`id_ucznia`, `imie`, `nazwisko`, `login`, `haslo`, `id_klasy`, `PESEL`, `Adres_zamieszkania`, `numer_kontaktowy`, `komentarz`) VALUES
+(1, 'Damian', 'Prądziński', 'prda', 'prda', 1, '', 0, 0, ''),
+(2, 'Kamil', 'Soliszewski', 'login', 'haslo', 1, '', 0, 0, ''),
+(3, 'Dominik', 'Kowalski', 'admin', 'admin', 1, '', 0, 0, '');
 
 --
 -- Indeksy dla zrzutów tabel
 --
 
 --
--- Indexes for table `klasy`
+-- Indeksy dla tabeli `klasy`
 --
 ALTER TABLE `klasy`
   ADD PRIMARY KEY (`id_klasy`),
@@ -164,13 +169,13 @@ ALTER TABLE `klasy`
   ADD KEY `id_wychowawcy` (`id_wychowawcy`);
 
 --
--- Indexes for table `nauczyciel`
+-- Indeksy dla tabeli `nauczyciel`
 --
 ALTER TABLE `nauczyciel`
   ADD PRIMARY KEY (`id_nauczyciela`);
 
 --
--- Indexes for table `oceny`
+-- Indeksy dla tabeli `oceny`
 --
 ALTER TABLE `oceny`
   ADD PRIMARY KEY (`id_oceny`),
@@ -179,14 +184,14 @@ ALTER TABLE `oceny`
   ADD KEY `id_nauczyciela` (`id_nauczyciela`);
 
 --
--- Indexes for table `przedmiot`
+-- Indeksy dla tabeli `przedmiot`
 --
 ALTER TABLE `przedmiot`
   ADD PRIMARY KEY (`id_przedmiotu`),
   ADD KEY `id_przedmiotu` (`id_przedmiotu`);
 
 --
--- Indexes for table `uczen`
+-- Indeksy dla tabeli `uczen`
 --
 ALTER TABLE `uczen`
   ADD PRIMARY KEY (`id_ucznia`),
@@ -212,7 +217,7 @@ ALTER TABLE `nauczyciel`
 -- AUTO_INCREMENT dla tabeli `oceny`
 --
 ALTER TABLE `oceny`
-  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT dla tabeli `przedmiot`
