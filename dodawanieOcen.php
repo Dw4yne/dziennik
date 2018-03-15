@@ -42,13 +42,24 @@
          ?>
         <div class="container row">
           <div class="form-group col-3">
-            <label for="exampleSelect1">Klasa</label>
-            <select class="form-control" id="exampleSelect1">
-              <option>1A</option>
-              <option>2C</option>
-              <option>3Z</option>
-              <option>4F</option>
-              <option>4G</option>
+            <?php
+            include('connect.php');
+            $q = "SELECT * FROM klasy";
+            $result = $polaczenie->query($q);
+            if($result != false){
+              $klasy = Array();
+              while($row = $result->fetch_assoc()) {
+                array_push($klasy, $row['klasa']);
+              }
+              ?>
+              <label for="exampleSelect1">Klasa</label>
+              <select class="form-control" id="exampleSelect1">
+              <?php
+              foreach ($klasy as $klasa) {
+                echo '<option>'.$klasa.'</option>';
+              }
+            }
+               ?>
             </select>
           </div>
           <!-- Waga oceny -->
@@ -79,28 +90,6 @@
             </select>
           </div>
 
-          <!-- Klasa -->
-          <div class="form-group col-3" >
-                      <label for="exampleSelect1"></label>
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input type="radio" class="form-check-input" name="plusminus" id="optionsRadios1" value="" checked>
-                          Pełna
-                        </label>
-                      </div>
-                      <div class="form-check">
-                      <label class="form-check-label">
-                          <input type="radio" class="form-check-input" name="plusminus" id="optionsRadios2" value="+">
-                          Plus (+)
-                        </label>
-                      </div>
-                      <div class="form-check">
-                      <label class="form-check-label">
-                          <input type="radio" class="form-check-input" name="plusminus" id="optionsRadios3" value="-">
-                            Minus(-)
-                        </label>
-                      </div>
-                  </div>
       </div>
         <div class="row">
         <div class="col-md ">
@@ -109,13 +98,22 @@
           <div class="form-group col-md ">
             <label for="exampleSelect1">Imię</label>
             <select class="form-control" id="exampleSelect1">
-              <option>Paweł</option>
-              <option>Arek</option>
-              <option>Damian</option>
-              <option>Dominik</option>
-              <option>Karol</option>
-              <option>Magda</option>
-              <option>Zuzia</option>
+            <?php
+            include('connect.php');
+            $q = "SELECT * FROM uczen";
+            $result = $polaczenie->query($q);
+            if($result != false){
+
+              $uczniowie = Array();
+              while($row = $result->fetch_assoc()) {
+
+                array_push($uczniowie, $row['imie']." ".$row['nazwisko']);
+              }
+                foreach ($uczniowie as $uczen) {
+                    echo '<option>'.$uczen.'</option>';
+                  }
+                }
+               ?>
             </select>
           </div>
         </div>

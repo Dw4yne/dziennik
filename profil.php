@@ -31,7 +31,7 @@
 <!--Main Navigation-->
 
   <main>
-  
+
     <div class="card">
 
     <!--Card image-->

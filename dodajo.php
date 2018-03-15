@@ -9,7 +9,7 @@
   $razem=$ocena.$plusminus;
 
 
-  if($ocena=="" || $waga==""){
+  if($ocena==""){
     session_start();
     $_SESSION['komunikat']='<div class="alert alert-danger" role="alert">
                       <strong>Błąd!</strong> Uzupełnij formularz.

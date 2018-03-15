@@ -30,7 +30,7 @@
 
   <main>
     <div class="container glowna">
-    <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+    <div id="carousel-example-2" class="carousel slide carousel-fade karuzela" data-ride="carousel">
     <!--Indicators-->
     <ol class="carousel-indicators">
         <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 14 Mar 2018, 22:32
--- Wersja serwera: 10.1.30-MariaDB
--- Wersja PHP: 7.2.2
+-- Czas generowania: 05 Mar 2018, 21:15
+-- Wersja serwera: 10.1.26-MariaDB
+-- Wersja PHP: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -55,21 +55,17 @@ CREATE TABLE `nauczyciel` (
   `imie` text COLLATE utf8_unicode_ci NOT NULL,
   `nazwisko` text COLLATE utf8_unicode_ci NOT NULL,
   `login` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `haslo` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `PESEL` char(11) COLLATE utf8_unicode_ci NOT NULL,
-  `Adres_zamieszkania` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `numer_kontaktowy` bigint(12) NOT NULL,
-  `komentarz` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `haslo` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `nauczyciel`
 --
 
-INSERT INTO `nauczyciel` (`id_nauczyciela`, `imie`, `nazwisko`, `login`, `haslo`, `PESEL`, `Adres_zamieszkania`, `numer_kontaktowy`, `komentarz`) VALUES
-(1, 'Justyna', 'Wołejko', 'loginj', 'loginj', '', '', 0, ''),
-(2, 'Paweł', 'Zawadzki', 'machina', 'cyfrowa', '', '', 0, ''),
-(3, 'Katarzyna', 'Wtulich', 'kata', 'wtuli', '', '', 0, '');
+INSERT INTO `nauczyciel` (`id_nauczyciela`, `imie`, `nazwisko`, `login`, `haslo`) VALUES
+(1, 'Justyna', 'Wołejko', 'loginj', 'loginj'),
+(2, 'Paweł', 'Zawadzki', 'machina', 'cyfrowa'),
+(3, 'Katarzyna', 'Wtulich', 'kata', 'wtuli');
 
 -- --------------------------------------------------------
 
@@ -91,12 +87,16 @@ CREATE TABLE `oceny` (
 --
 
 INSERT INTO `oceny` (`id_oceny`, `id_przedmiotu`, `id_ucznia`, `ocena`, `id_nauczyciela`, `semestr`) VALUES
-(12, 3, 2, 1, 3, 1),
-(13, 2, 2, 2, 3, 1),
-(14, 5, 2, 3, 2, 1),
-(15, 10, 2, 4, 2, 1),
-(16, 8, 2, 5, 1, 1),
-(17, 9, 2, 6, 3, 1);
+(1, 6, 2, 5, 1, 1),
+(2, 5, 3, 5, 1, 1),
+(3, 5, 3, 5, 1, 1),
+(4, 3, 2, 4, 1, 1),
+(5, 6, 2, 2, 1, 1),
+(6, 11, 2, 1, 3, 1),
+(7, 9, 2, 3, 3, 1),
+(8, 9, 2, 6, 3, 1),
+(9, 6, 2, 3, 1, 1),
+(10, 3, 2, 2, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -139,28 +139,24 @@ CREATE TABLE `uczen` (
   `nazwisko` text COLLATE utf8_unicode_ci NOT NULL,
   `login` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `haslo` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `id_klasy` int(11) NOT NULL,
-  `PESEL` char(11) COLLATE utf8_unicode_ci NOT NULL,
-  `Adres_zamieszkania` int(50) NOT NULL,
-  `numer_kontaktowy` bigint(12) NOT NULL,
-  `komentarz` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `id_klasy` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Zrzut danych tabeli `uczen`
 --
 
-INSERT INTO `uczen` (`id_ucznia`, `imie`, `nazwisko`, `login`, `haslo`, `id_klasy`, `PESEL`, `Adres_zamieszkania`, `numer_kontaktowy`, `komentarz`) VALUES
-(1, 'Damian', 'Prądziński', 'prda', 'prda', 1, '', 0, 0, ''),
-(2, 'Kamil', 'Soliszewski', 'login', 'haslo', 1, '', 0, 0, ''),
-(3, 'Dominik', 'Kowalski', 'admin', 'admin', 1, '', 0, 0, '');
+INSERT INTO `uczen` (`id_ucznia`, `imie`, `nazwisko`, `login`, `haslo`, `id_klasy`) VALUES
+(1, 'Damian', 'Prądziński', 'prda', 'prda', 1),
+(2, 'Kamil', 'Soliszewski', 'login', 'haslo', 1),
+(3, 'Dominik', 'Kowalski', 'admin', 'admin', 1);
 
 --
 -- Indeksy dla zrzutów tabel
 --
 
 --
--- Indeksy dla tabeli `klasy`
+-- Indexes for table `klasy`
 --
 ALTER TABLE `klasy`
   ADD PRIMARY KEY (`id_klasy`),
@@ -168,13 +164,13 @@ ALTER TABLE `klasy`
   ADD KEY `id_wychowawcy` (`id_wychowawcy`);
 
 --
--- Indeksy dla tabeli `nauczyciel`
+-- Indexes for table `nauczyciel`
 --
 ALTER TABLE `nauczyciel`
   ADD PRIMARY KEY (`id_nauczyciela`);
 
 --
--- Indeksy dla tabeli `oceny`
+-- Indexes for table `oceny`
 --
 ALTER TABLE `oceny`
   ADD PRIMARY KEY (`id_oceny`),
@@ -183,14 +179,14 @@ ALTER TABLE `oceny`
   ADD KEY `id_nauczyciela` (`id_nauczyciela`);
 
 --
--- Indeksy dla tabeli `przedmiot`
+-- Indexes for table `przedmiot`
 --
 ALTER TABLE `przedmiot`
   ADD PRIMARY KEY (`id_przedmiotu`),
   ADD KEY `id_przedmiotu` (`id_przedmiotu`);
 
 --
--- Indeksy dla tabeli `uczen`
+-- Indexes for table `uczen`
 --
 ALTER TABLE `uczen`
   ADD PRIMARY KEY (`id_ucznia`),
@@ -216,7 +212,7 @@ ALTER TABLE `nauczyciel`
 -- AUTO_INCREMENT dla tabeli `oceny`
 --
 ALTER TABLE `oceny`
-  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_oceny` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT dla tabeli `przedmiot`

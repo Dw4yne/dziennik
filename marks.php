@@ -63,19 +63,19 @@
           $colorOceny = 'danger';
           echo '<button class="btn btn-'.$colorOceny.'">'.$ocena.'</button>';
         }if ($ocena==2) {
-          $colorOceny = 'warning';
+          $colorOceny = 'deep-orange';
           echo '<button class="btn btn-'.$colorOceny.'">'.$ocena.'</button>';
         }if ($ocena==3) {
-          $colorOceny = 'yellow';
+          $colorOceny = 'amber';
           echo '<button class="btn btn-'.$colorOceny.'">'.$ocena.'</button>';
         }if ($ocena==4) {
-          $colorOceny = 'cyan';
+          $colorOceny = 'yellow';
           echo '<button class="btn btn-'.$colorOceny.'">'.$ocena.'</button>';
         }if ($ocena==5) {
           $colorOceny = 'light-green';
           echo '<button class="btn btn-'.$colorOceny.'">'.$ocena.'</button>';
         }if ($ocena==6) {
-          $colorOceny = 'success';
+          $colorOceny = 'dark-green';
           echo '<button class="btn btn-'.$colorOceny.'">'.$ocena.'</button>';
         }
       }

@@ -30,7 +30,7 @@
                   <div class="dropdown-menu">
 
                       <a class="dropdown-item podkresl dropActive" href="dodawanieOcen.php"><p class="dropLine">Ocena</p></a>
-                      <a class="dropdown-item disabled" href="#"><p class="dropLine" style="color: grey">Aktualności</p></a>
+                      <a class="dropdown-item disabled" href="#"><p class="dropLine">Aktualności</p></a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item podkresl dropActive" href="dodawanieUcznia.php"><p class="dropLine">Uczeń</p></a>
                       <a class="dropdown-item podkresl dropActive" href="dodawanieNauczyciela.php"><p class="dropLine">Nauczyciel</p></a>
