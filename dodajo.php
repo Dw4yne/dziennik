@@ -3,13 +3,14 @@
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   $ocena=$_POST['ocena'];
-  $plusminus=$_POST['plusminus'];
-  $waga=$_POST['waga'];
-  $komentarz=$_POST['komentarz'];
-  $razem=$ocena.$plusminus;
+  $klasa=$_POST['klasa'];
+  $przedmiot=$_POST['przedmiot']
+  $uczen=$_POST['uczen'];
+  $semestr=$_POST['semestr'];
 
 
-  if($ocena==""){
+
+  if($ocena=="" || $klasa=="" || $przedmiot=="" || $uczen=="" || $semestr==""){
     session_start();
     $_SESSION['komunikat']='<div class="alert alert-danger" role="alert">
                       <strong>Błąd!</strong> Uzupełnij formularz.
@@ -18,7 +19,7 @@
 
   }else{
     try {
-      $zapytanie= $db->prepare("INSERT INTO oceny (ocena, waga, komentarz) VALUES( :razem, :waga, :komentarz)");
+      $zapytanie= $db->prepare("INSERT INTO oceny (ocena, klasa, komentarz) VALUES( :razem, :waga, :komentarz)");
       $zapytanie->bindValue(":razem", $razem);
       $zapytanie->bindValue(":waga", $waga);
       $zapytanie->bindValue(":komentarz", $komentarz);

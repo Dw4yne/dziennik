@@ -41,9 +41,10 @@
           }
          ?>
         <div class="container row">
-          <div class="form-group col-4">
+          <div class="form-group col-3">
               <label for="exampleSelect1">Klasa</label>
-              <select class="form-control" id="exampleSelect1">
+              <select class="form-control" name="klasa">
+                <option selected  value="" disactive> Klasa </option>
               <?php
               include('connect.php');
               $q = "SELECT * FROM klasy";
@@ -61,10 +62,30 @@
                ?>
             </select>
           </div>
+          <div class="form-group col-3">
+            <label for="exampleSelect1">Przedmiot</label>
+            <select class="form-control" name="przedmiot">
+              <option selected  value="" disactive> Przedmiot </option>
+              <?php
+                include('connect.php');
+                $q = "SELECT * FROM przedmiot";
+                $result = $polaczenie->query($q);
+                if($result != false){
+                  $przedmiot = Array();
+                  while($row = $result->fetch_assoc()){
+                    array_push($przedmiot, $row['przedmiot']);
+                  }
+                  foreach ($przedmiot as $przedmioty) {
+                    echo '<option>'.$przedmioty.'</option>';
+                  }
+                }
+              ?>
+            </select>
+          </div>
           <!-- Waga oceny -->
-          <div class="form-group col-4">
+          <!-- <div class="form-group col-4">
             <label for="exampleSelect1">Waga</label>
-            <select class="form-control" id="exampleSelect1" name="waga">
+            <select class="form-control" name="waga">
               <option selected value=""> Waga </option>
               <option value="1">1 (aktywność)</option>
               <option value="2">2 (praca domowa)</option>
@@ -72,13 +93,13 @@
               <option value="4">4 (projekt)</option>
               <option value="5">5 (praca kalsowa)</option>
             </select>
-          </div>
+          </div> -->
 
 
           <!-- Ocena -->
-          <div class="form-group col-4">
+          <div class="form-group col-3">
             <label for="exampleSelect1">Ocena</label>
-            <select class="form-control" id="exampleSelect1" name="ocena">
+            <select class="form-control" name="ocena">
               <option selected  value="" disactive> Ocena </option>
               <option>1</option>
               <option>2</option>
@@ -88,15 +109,24 @@
               <option>6</option>
             </select>
           </div>
+          <div class="form-group col-3">
+            <label for="exampleSelect1">Semestr</label>
+            <select class="form-control" name="ocena">
+              <option selected  value="" disactive> Semestr </option>
+              <option>1</option>
+              <option>2</option>
+            </select>
+          </div>
 
       </div>
         <div class="row">
         <div class="col-md ">
 
           <!-- Imię -->
-          <div class="form-group col-md ">
+          <div class="form-group col-md">
             <label for="exampleSelect1">Uczeń (imię i nazwisko)</label>
-            <select class="form-control" id="exampleSelect1">
+            <select class="form-control" name="uczen">
+              <option selected  value="" disactive> Uczeń </option>
             <?php
             include('connect.php');
             $q = "SELECT * FROM uczen";
@@ -117,11 +147,11 @@
           </div>
         </div>
       </div>
-      <div class="md-form">
+      <!-- <div class="md-form">
               <i class="fa fa-info-circle prefix black-text"></i>
               <textarea type="text" id="form7" class="md-textarea" style="height: 120px" name="komentarz"></textarea>
               <label for="form7">Komentarz</label>
-      </div>
+      </div> -->
       <div class="text-center">
           <button class="btn btn-default btn-lg btn-block">Dodaj ocene <i class="fa fa-paper-plane-o ml-1"></i></button>
       </div>
