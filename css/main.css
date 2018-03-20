@@ -1,3 +1,15 @@
+#plan{
+  margin-right: 100px;
+}
+
+li {
+   display: inline;
+   }
+
+.nowy{
+  border: 2px solid #2bbbad;
+}
+
 .ramka{
   padding-top: 20px;
   padding-bottom: 20px;

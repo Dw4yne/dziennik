@@ -21,6 +21,7 @@
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/main.css" rel="stylesheet">
+    <!-- Czcionki -->
 </head>
 
 <body>
