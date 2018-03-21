@@ -8,6 +8,7 @@
     $login=$_POST['login'];
     $haslo=$_POST['haslo'];
 
+
     if($imie==="" || $nazwisko==="" ||
         $telefon=="" || $login=="" ||
         $haslo==""){

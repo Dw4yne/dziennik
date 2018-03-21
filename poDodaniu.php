@@ -30,12 +30,23 @@
   <div class="container">
   <div class="row justify-content-md-center">
 
-    <div class="col-md-6 blok">
+    <div class="col-md-6">
 
-        <a class="navbar-brand" href="main.php"><img class="logo" src="img/logo.png" ></a>
+      <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col">
+          <img class="logo" src="img/logo.png">
+        </div>
+        <div class="col">
+
+        </div>
+      </div>
+      
 
       <div class="rejestrDodany">
-        Rejestr został pomyślnie dodany do bazy danych. <a href="main.php"><button class="btn btn-outline-primary waves-effect przyciskRejestrDodany">Wróc do strony głównej <i class="fa fa-paper-plane-o ml-1"></i></button></a>
+        <p class="h4">Rejestr został pomyślnie dodany do bazy danych.</p><a href="main.php"><button class="btn btn-outline-default waves-effect przyciskRejestrDodany">Wróc do strony głównej <i class="fa fa-paper-plane-o ml-1"></i></button></a>
       </div>
     </div>
 

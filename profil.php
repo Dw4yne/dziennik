@@ -4,6 +4,7 @@
   {
     header('Location: index.php');
     exit();
+    include('connect.php');
   }
  ?>
 <!DOCTYPE html>
@@ -22,6 +23,7 @@
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/profil.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
 </head>
 
@@ -32,49 +34,36 @@
 
   <main>
 
-    <div class="card">
-
-    <!--Card image-->
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Slides/img(120).jpg" alt="Card image cap">
-
-    <!--Card content-->
-    <div class="card-body">
-
-        <!-- Container -->
-        <div class="d-block d-md-flex">
-
-            <!-- Column -->
-            <div class="p-3 flex-1">
-
-                <h2 class="pb-3 font-weight-bold">Title of the news</h2>
-                <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
+    <div class="container">
+      <div class="row">
+        <div class="offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-12 profile-header"></div>
             </div>
-            <!-- Column -->
+            <div class="row user-detail">
+                <div class="col-lg-12 col-sm-12 col-12">
+                    <img src="img/profil.jpg" class="rounded-circle img-thumbnail">
+                    <p class="h5"><?php echo '<font face="Roboto">'."   ".$_SESSION['imie']."  ".$_SESSION['nazwisko']."</font>"; ?></p>
+                    <p class="h6"><i class="fa fa-users" aria-hidden="true"></i> III A</p><!--Kamel zrób sesje i niech czyta klasę tu-->
 
-            <!-- Column -->
-            <div class="p-3 flex-1">
+                    <hr>
+                    <a href="#" class="btn btn-danger btn-sm">Zobacz statystyki</a>
+                    <a href="#" class="btn btn-info btn-sm">Wyślij wiadomość</a>
 
-                <h2 class="pb-3 font-weight-bold">Title of the news</h2>
-                <p align="justify">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-
+                    <hr>
+                    <span>Lorem ips consectetur adipisium, eiusmod tempor incididuin reprehendeanim.</span>
+                </div>
             </div>
-            <!-- Column -->
-
-            <!-- Column -->
-            <div class="p-3 flex-1">
-
-                <h2 class="pb-3 font-weight-bold">Title of the news</h2>
-                <p align="justify">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-
+            <div class="row user-social-detail">
+                <div class="col-lg-12 col-sm-12 col-12">
+                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                </div>
             </div>
-            <!-- Column -->
-
         </div>
-        <!-- Container -->
-
+      </div>
     </div>
-</div>
 
   </main>
 
