@@ -1,12 +1,15 @@
 <?php
   session_start();
   if(!isset($_SESSION['zalogowano']))
-  {
-    header('Location: index.php');
-    exit();
-    include('connect.php');
-  }
+{
+  header('Location: index.php');
+  exit();
+  include('connect.php');
+  include('zaloguj.php');
+}
+
  ?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -44,8 +47,7 @@
                 <div class="col-lg-12 col-sm-12 col-12">
                     <img src="img/profil.jpg" class="rounded-circle img-thumbnail">
                     <p class="h5"><?php echo '<font face="Roboto">'."   ".$_SESSION['imie']."  ".$_SESSION['nazwisko']."</font>"; ?></p>
-                    <p class="h6"><i class="fa fa-users" aria-hidden="true"></i> III A</p><!--Kamel zrób sesje i niech czyta klasę tu-->
-
+                    <p class="h6"><i class="fa fa-users" aria-hidden="true"></i><?php echo '<font face="Roboto">'."   ".$_SESSION['klasa']."  </font>"; ?></p><!--Kamel zrób sesje i niech czyta klasę tu-->
                     <hr>
                     <a href="#" class="btn btn-danger btn-sm">Zobacz statystyki</a>
                     <a href="#" class="btn btn-info btn-sm">Wyślij wiadomość</a>

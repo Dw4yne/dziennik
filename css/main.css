@@ -1,3 +1,8 @@
+
+#dropdownOdstep{
+  margin-top: 5px;
+}
+
 #plan{
   margin-right: 100px;
 }
@@ -8,6 +13,7 @@ li {
 
 .nowy{
   border: 2px solid #2bbbad;
+  text-align: center;
 }
 
 .ramka{

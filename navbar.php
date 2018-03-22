@@ -1,4 +1,3 @@
-
 <header>
 
   <nav class="navbar  navbar-expand-lg navbar-light bg-white scrolling-navbar navbarglowna">
@@ -25,7 +24,7 @@
               </li>
               <li class="nav-item dropdown nowy">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #d44452;"><strong>NOWY&nbsp;</strong></a>
-                  <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                  <div class="dropdown-menu dropdown-primary" id="dropdownOdstep" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item podkresl dropActive" href="dodawanieOcen.php"><p class="dropLine">Ocena</p></a>
                     <a class="dropdown-item disabled" href="#"><p class="dropLine" style="color: grey;">Aktualności</p></a>
                     <div class="dropdown-divider"></div>

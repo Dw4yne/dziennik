@@ -34,26 +34,26 @@
   include('connect.php');
   $q = "SELECT * FROM oceny left JOIN przedmiot on oceny.id_przedmiotu = przedmiot.id_przedmiotu where id_ucznia=".$_SESSION['id'];
   $result = $polaczenie->query($q);
-  if($result != false){
+
+  if($result->num_rows > 0){
 
 
   $oceny = Array();
   while($row = $result->fetch_assoc()) {
-    if(!isset($oceny[$row['przedmiot']])) $oceny[$row['przedmiot']] = Array();
+      if(!isset($oceny[$row['przedmiot']]))
+        $oceny[$row['przedmiot']] = Array();
       array_push($oceny[$row['przedmiot']], $row['ocena']);
     }
-  }
-  else echo '<h1>brak ocen</h1>';
-   ?>
-<table class="table table-bordered" id="oceny">
-  <thead class="" id="table_head">
-    <tr class="table pasektabeli">
-      <th class="text-center przedmiotytabela"><p class="h5">Przedmiot</p></th>
-      <th class="text-center ocenysemestry"><p class="h5">1 Semestr</p></th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php
+    echo '
+    <table class="table table-bordered" id="oceny">
+      <thead class="" id="table_head">
+        <tr class="table pasektabeli">
+          <th class="text-center przedmiotytabela"><p class="h5">Przedmiot</p></th>
+          <th class="text-center ocenysemestry"><p class="h5">1 Semestr</p></th>
+        </tr>
+      </thead>
+      <tbody>
+    ';
     foreach ($oceny as $klucz => $przedmiot) {
       echo '<tr>';
       echo '<td>'.'<h4 class="h4-responsive">'.$klucz.'</h4>'.'</td>';
@@ -82,10 +82,17 @@
       echo '</td>';
       echo '</tr>';
     }
-     ?>
+    echo '
+    </tbody>
+    </table>
+    ';
+  }
+  else echo '<h1>brak ocen</h1>';
+   ?>
 
-  </tbody>
-</table>
+
+
+
   <!--Bottom Table UI-->
   <div class="d-flex justify-content-center bottomTable">
 
