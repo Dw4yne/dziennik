@@ -78,7 +78,7 @@
                 <!--Grid row-->
 
             </form>
-            <button href="main.php" type="button" class="btn btn-danger">Anuluj</button>
+            <button onclick="goBack()" href="main.php" type="button" class="btn btn-danger">Anuluj</button>
             <div class="center-on-small-only send">
                 <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Wyślij</a>
             </div>
@@ -152,6 +152,11 @@ function validateForm() {
   document.getElementById('contact-form').submit();
 
 }
+
+  function goBack() {
+    window.history.back();
+  }
+
   </script>
 
 
