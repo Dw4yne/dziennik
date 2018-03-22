@@ -29,7 +29,7 @@
   <main>
     <form action="zaloguj.php" method="post">
       <div class="logowanie">
-    <p class="h2 text-center mb-5">Zaloguj się do</br><img class="logoLogowanie" src="img/logo.png"></p>
+    <p class="h2 text-center mb-5">Zaloguj się do</br><img class="logoLogowanie" src="img/veclogpng.png"></p>
 
     <div class="md-form">
         <i class="fa fa-envelope prefix grey-text"></i>

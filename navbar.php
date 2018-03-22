@@ -1,7 +1,7 @@
 <header>
 
   <nav class="navbar  navbar-expand-lg navbar-light bg-white scrolling-navbar navbarglowna">
-      <a class="navbar-brand" href="main.php"><img src="img/logo.png" style="height: 48px;"></a>
+      <a class="navbar-brand" href="main.php"><img src="img/veclogpng.png" style="height: 48px;"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>

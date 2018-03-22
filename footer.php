@@ -16,7 +16,7 @@
       <h5 class="h5-responsive infoFooter">BLOG</h5>
       <h5 class="h5-responsive infoFooter">O NAS</h5>
       <h5 class="h5-responsive infoFooter">FAQ</h5>
-      <img src="img/logo.png" style="height: 115px;">
+      <img src="img/veclogpng.png" style="height: 115px;">
 
     </div>
   </div>
