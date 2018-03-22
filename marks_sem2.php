@@ -34,26 +34,26 @@
   include('connect.php');
   $q = "SELECT * FROM oceny left JOIN przedmiot on oceny.id_przedmiotu = przedmiot.id_przedmiotu where id_ucznia=".$_SESSION['id'];
   $result = $polaczenie->query($q);
-  if($result != false){
+
+  if($result->num_rows > 0){
 
 
   $oceny = Array();
   while($row = $result->fetch_assoc()) {
-    if(!isset($oceny[$row['przedmiot']])) $oceny[$row['przedmiot']] = Array();
+      if(!isset($oceny[$row['przedmiot']]))
+        $oceny[$row['przedmiot']] = Array();
       array_push($oceny[$row['przedmiot']], $row['ocena']);
     }
-  }
-  else echo '<h1>brak ocen</h1>';
-   ?>
-<table class="table table-bordered" id="oceny">
-  <thead class="" id="table_head">
-    <tr class="table pasektabeli">
-      <th class="text-center przedmiotytabela"><p class="h5">Przedmiot</p></th>
-      <th class="text-center ocenysemestry"><p class="h5">2 Semestr</p></th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php
+    echo '
+    <table class="table table-bordered" id="oceny">
+      <thead class="" id="table_head">
+        <tr class="table pasektabeli">
+          <th class="text-center przedmiotytabela"><p class="h5">Przedmiot</p></th>
+          <th class="text-center ocenysemestry"><p class="h5">1 Semestr</p></th>
+        </tr>
+      </thead>
+      <tbody>
+    ';
     foreach ($oceny as $klucz => $przedmiot) {
       echo '<tr>';
       echo '<td>'.'<h4 class="h4-responsive">'.$klucz.'</h4>'.'</td>';
@@ -82,12 +82,24 @@
       echo '</td>';
       echo '</tr>';
     }
-     ?>
+    echo '
+    </tbody>
+    </table>
+    ';
+  }
+  else echo '
+<blockquote class="blockquote bq-danger">
+    <p class="bq-title">Brak ocen!</p>
+    <p>W razie problemów z treścią strony i działaniem strony prosimy zgłaszać <a href="errorForm.php">administracji</a>.</p>
+</blockquote>
+';
+   ?>
 
-  </tbody>
-</table>
+
+
+
   <!--Bottom Table UI-->
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center bottomTable">
 
       <!--Pagination -->
       <nav class="my-3 pt-0">
@@ -95,15 +107,13 @@
 
               <!--Numbers-->
               <li class="page-item"><a href="marks.php" class="page-link">1</a></li>
-              <li class="page-item active"><a class="page-link">2</a></li>
+              <li class="page-item active"><a href="marks_sem2.php" class="page-link">2</a></li>
 
           </ul>
       </nav>
       <!--/Pagination -->
 
   </div>
-</div>
-
 </div>
 
 

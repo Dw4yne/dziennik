@@ -111,7 +111,7 @@
           </div>
           <div class="form-group col-3">
             <label for="exampleSelect1">Semestr</label>
-            <select class="form-control" name="ocena">
+            <select class="form-control" name="semestr">
               <option selected  value="" disactive> Semestr </option>
               <option>1</option>
               <option>2</option>

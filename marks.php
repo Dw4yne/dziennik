@@ -87,8 +87,13 @@
     </table>
     ';
   }
-  else echo '<h1>brak ocen</h1>';
-   ?>
+  else echo '
+<blockquote class="blockquote bq-danger">
+    <p class="bq-title">Brak ocen!</p>
+    <p>W razie problemów z treścią strony i działaniem strony prosimy zgłaszać <a href="errorForm.php">administracji</a>.</p>
+</blockquote>
+';
+  ?>
 
 
 
