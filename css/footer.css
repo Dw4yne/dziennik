@@ -1,4 +1,3 @@
-
 .marginIconGPlus{
       padding-right: 11px;
       padding-left: 11px;
@@ -12,10 +11,10 @@
 }
 
 .footer1{
-  background-color: #4f4f4f;
+  background-color: #92DDD5;
   color: white;
   padding: 50px;
-
+  border-top: 2px solid #333333;
 }
 
 .footerIcon{
@@ -49,11 +48,15 @@
 .infoFooter{
   text-align: center;
   font-family: 'Lalezar', cursive;
+  color: #333333;
 }
 
+.devider{
+  border-top: 1px solid white;
+  padding-top: 15px;
+}
 
-
-.miejsceNaLogo{
-  margin-top: 20px;
-  color: #5b5b5b;
+.devider1{
+  border-bottom: 1px solid white;
+  padding-bottom: 15px;
 }
