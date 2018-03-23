@@ -30,7 +30,7 @@
 <!--Main Navigation-->
 
   <main>
-    <div class="container odstepMain ramka white rounded z-depth-2">
+    <div class="container odstepMain ramka white z-depth-2">
       <form method="post"
             action="dodajo.php">
         <p class="h3 text-center mb-4">Dodaj ocene</p>
