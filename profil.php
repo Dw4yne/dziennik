@@ -39,7 +39,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center">
+        <div class="offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center z-depth-2">
             <div class="row">
                 <div class="col-lg-12 col-sm-12 col-12 profile-header"></div>
             </div>
