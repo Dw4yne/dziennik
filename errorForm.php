@@ -15,7 +15,7 @@
   <!-- Czcionki -->
 </head>
 <body>
-  <section class="section">
+  <section class="section z-depth-2">
 
     <blockquote class="blockquote bq-primary">
         <p class="bq-title">Zgłoś problem</p>
@@ -78,12 +78,15 @@
                 <!--Grid row-->
 
             </form>
-            <button onclick="goBack()" href="main.php" type="button" class="btn btn-danger">Anuluj</button>
-            <div class="center-on-small-only send">
-                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Wyślij</a>
+
+            <div class="clearfix">
+                <button type="button" class="btn btn-danger float-left" onclick="goBack()">Anuluj&nbsp;&nbsp;<i class="fa fa-times" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-primary float-right" onclick="document.getElementById('contact-form').submit();">Wyślij&nbsp;&nbsp;<i class="fa fa-send-o" aria-hidden="true"></i></button>
             </div>
+
             <div class="status"></div>
         </div>
+
         <!--Grid column-->
 
         <!--Grid column-->
