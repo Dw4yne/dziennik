@@ -86,8 +86,8 @@
 
           <div class="md-form">
               <i class="fa fa-phone prefix black-text"></i>
-              <input type="text" id="telefon" class="form-control" name="telefon">
-              <label for="telefon">Nr. kontaktowy*</label>
+              <input type="text" id="form6" class="form-control" name="telefon">
+              <label for="form6">Nr. kontaktowy*</label>
           </div>
 
           <div class="md-form">
@@ -97,7 +97,7 @@
           </div>
 
           <div class="text-center">
-              <button class="btn btn-default btn-lg btn-block">Zarejestruj <i class="fa fa-paper-plane-o ml-1"></i></button>
+              <button class="btn btn-default btn-lg btn-block">Zarejestruj <i class="fa fa-paper-plane-o ml-1" type="submit" name="submit"></i></button>
           </div>
 
       </form>

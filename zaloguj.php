@@ -22,7 +22,7 @@ $login = $_POST['login'];
 $haslo = $_POST['haslo'];
 
 $sql = "SELECT * FROM uczen
-        LEFT JOIN klasy on uczen.id_klasy = klasy.id_klasy
+        LEFT JOIN klasy on uczen.klasa = klasy.klasa
         WHERE login='$login' AND haslo='$haslo'";
 
 if ($wynik = @$polaczenie->query($sql))
