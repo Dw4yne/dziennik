@@ -61,15 +61,31 @@
         </div>
 
         <div class="col-md md-form">
-
             <input type="text" id="haslo" class="form-control" name="haslo">
             <label class="col-md" for="haslo">Haslo</label>
         </div>
       </div>
-          <div class="md-form">
+
+          <div class="cold-md md-form">
               <i class="fa fa-tag prefix black-text"></i>
-              <input type="text" id="form3" class="form-control" name="klasa">
-              <label for="form3">Klasa</label>
+                  <select class="form-control klasa" name="klasa">
+                    <option selected  value="" disactive> Klasa </option>
+                  <?php
+                  include('connect.php');
+                  $q = "SELECT * FROM klasy";
+                  $result = $polaczenie->query($q);
+                  if($result != false){
+                    $klasy = Array();
+                    while($row = $result->fetch_assoc()) {
+                      array_push($klasy, $row['klasa']);
+                    }
+
+                  foreach ($klasy as $klasa) {
+                    echo '<option>'.$klasa.'</option>';
+                  }
+                }
+                   ?>
+                </select>
           </div>
 
           <div class="md-form">

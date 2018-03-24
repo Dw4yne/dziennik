@@ -37,13 +37,13 @@
 
         </div>
         <div class="col">
-          <img class="logo" src="img/logo.png">
+          <img class="logo" src="img/veclogpng.png">
         </div>
         <div class="col">
 
         </div>
       </div>
-      
+
 
       <div class="rejestrDodany">
         <p class="h4">Rejestr został pomyślnie dodany do bazy danych.</p><a href="main.php"><button class="btn btn-outline-default waves-effect przyciskRejestrDodany">Wróc do strony głównej <i class="fa fa-paper-plane-o ml-1"></i></button></a>
