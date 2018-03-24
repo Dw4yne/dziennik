@@ -31,13 +31,13 @@
 
 
 
-<div class="card">
+<!-- <div class="card">
     <div class="card-body">
 
-        <div class="table-wrapper-2">
+        <div class="table-wrapper-2"> -->
 
-            <!--Table-->
-            <table class="table table-responsive">
+            <!--Table -->
+            <table class="table table-responsive tablearozmiar odstepMain z-depth-2">
                 <thead class="mdb-color pasektabeli">
                     <tr>
                         <th class="text-center">Lekcja</th>
@@ -331,10 +331,10 @@
             </table>
             <!--Table-->
 
-        </div>
+        <!-- </div>
 
     </div>
-</div>
+</div> -->
 
   <main>
 

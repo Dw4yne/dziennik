@@ -29,7 +29,7 @@
   <?php include('navbar.php'); ?>
 
   <main>
-    <div class="container odstepMain white rounded ramka">
+    <div class="container odstepMain white ramka z-depth-2">
       <form action="dodaju.php"
             method="post">
 
