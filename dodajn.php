@@ -1,39 +1,39 @@
 <?php
-  $db = new PDO('mysql:host=localhost;dbname=szkola', 'root', '',array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+session_start();
+require_once "connectPDO.php";
+try
+{
+     $DB_con = new PDO("mysql:host={$DB_host};dbname={$DB_name}",$DB_user,$DB_pass);
+     $DB_con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch(PDOException $e)
+{
+     die("Polaczenie z baza danych przerwane: " . $e->getMessage());
+}
 
-    $imie=$_POST['imie'];
-    $nazwisko=$_POST['nazwisko'];
-    $telefon=$_POST['telefon'];
-    $login=$_POST['login'];
-    $haslo=$_POST['haslo'];
+$imie=$_POST['imie'];
+$nazwisko=$_POST['nazwisko'];
+$login=$_POST['login'];
+$haslo=$_POST['haslo'];
+$pesel=$_POST['pesel'];
+$adres=$_POST['adres'];
+$telefon=$_POST['telefon'];
 
-    if($imie==="" || $nazwisko==="" ||
-        $telefon=="" || $login=="" ||
-        $haslo==""){
+ if
+ (!empty($_POST['imie']) && !empty($_POST['nazwisko'])
+ && !empty($_POST['login']) && !empty($_POST['haslo'])
+ && !empty($_POST['pesel']) && !empty($_POST['adres'])
+ && !empty($_POST['telefon'])) {
 
-      session_start();
-      $_SESSION['komunikat']='<div class="alert alert-danger" role="alert">
-                        <strong>Błąd!</strong> Uzupełnij formularz.
-                        </div>';
-                        header('Location: dodawanieNauczyciela.php');
-
-    }else{
-    try {
-      $zapytanie= $db->prepare("INSERT INTO nauczyciele (imie, nazwisko, telefon, login, haslo) VALUES( :imie, :nazwisko, :telefon,  :login, :haslo)");
-      $zapytanie->bindValue(":imie", $imie);
-      $zapytanie->bindValue(":nazwisko", $nazwisko);
-      $zapytanie->bindValue(":telefon", $telefon);
-      $zapytanie->bindValue(":login", $login);
-      $zapytanie->bindValue(":haslo", $haslo);
-      $zapytanie->execute();
-      if($zapytanie){
-        header('Location: poDodaniu.php');
-      }else{
-        header('Location: nieDodalo.php');
-      }
-    } catch (Exception $e) {
-      echo $e->getMessage();
-    }
+     $sql = "INSERT INTO nauczyciel (imie, nazwisko, login, haslo, PESEL, Adres_zamieszkania, numer_kontaktowy)
+             VALUES ('$imie' , '$nazwisko' , '$login' , '$haslo' , '$pesel' , '$adres' , '$telefon')";
+     $records = $DB_con->prepare($sql);
+     $records->execute();
+     header('Location: poDodaniu.php');
+} else {
+        $_SESSION['komunikat']='<div class="alert alert-danger" role="alert">
+                          <strong>Błąd!</strong> Uzupełnij formularz.
+                          </div>';
+        header('Location: dodawanieNauczyciela.php');
 }
  ?>
