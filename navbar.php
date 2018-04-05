@@ -22,16 +22,20 @@
               <li class="nav-item podkresl" id="plan">
                   <a class="nav-link" href="planLekcji.php"><i class="fa fa-calendar fa-lg" aria-hidden="true"></i>  Plan lekcji</a>
               </li>
-              <li class="nav-item dropdown nowy">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #d44452;"><strong>NOWY&nbsp;</strong></a>
-                  <div class="dropdown-menu dropdown-primary" id="dropdownOdstep" aria-labelledby="navbarDropdownMenuLink">
+              <li class="nav-item">
+              <div class="dropdown">
+                  <button class="btn btn-sm btn-default dropdown-toggle" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dodaj
+                  </button>
+                  <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item podkresl dropActive" href="dodawanieOcen.php"><p class="dropLine">Ocena</p></a>
                     <a class="dropdown-item disabled" href="#"><p class="dropLine" style="color: grey;">Aktualności</p></a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item podkresl dropActive" href="dodawanieUcznia.php"><p class="dropLine">Uczeń</p></a>
                     <a class="dropdown-item podkresl dropActive" href="dodawanieNauczyciela.php"><p class="dropLine">Nauczyciel</p></a>
                   </div>
-              </li>
+              </div>
+            </li>
           </ul>
           <ul class="navbar-nav nav-flex-icons">
             <li class="nav-item example">
