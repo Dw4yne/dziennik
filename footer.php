@@ -18,7 +18,7 @@
         <a class="btn-floating btn-lg footerIcon facebook rounded-circle"><i class="fa fa-facebook-square"></i></a>
         <a class="btn-floating btn-lg footerIcon github marginIcon rounded-circle"><i class="fa fa-github"></i></a>
         <a class="btn-floating btn-lg footerIcon googlePlus marginIconGPlus marginIcon rounded-circle"><i class="fa fa-google-plus"></i></a></br>
-        <a class="btn-floating btn-lg twitter marginIcon rounded-circle"><i class="fa fa-twitter"></i></a>
+        <a class="btn-floating btn-lg twitter rounded-circle"><i class="fa fa-twitter"></i></a>
         <a class="btn-floating btn-lg instagram marginIcon rounded-circle"><i class="fa fa-instagram"></i></a>
       </div>
   </div>
@@ -36,11 +36,11 @@
 <button class="btn btn" onclick="topFunction()" id="scrollTop" title="Przejdź na górę"><i class="fa fa-arrow-up fa-4x" aria-hidden="true"></i></button>
 
     <script>
-      // Kiedy użytkownik zescrolluje na dół 20px, pokaż przycisk
+      // Kiedy użytkownik zescrolluje na dół 500px, pokaż przycisk
       window.onscroll = function() {scrollFunction()};
 
       function scrollFunction() {
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
               document.getElementById("scrollTop").style.display = "block";
           } else {
               document.getElementById("scrollTop").style.display = "none";
