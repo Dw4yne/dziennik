@@ -47,8 +47,8 @@
                 <div class="mask"></div>
             </div>
             <div class="carousel-caption">
-                <h3 class="h3-responsive">Przykładowy tekst</h3>
-                <p>Przykładowy tekst</p>
+                <h3 class="h3-responsive d-none d-lg-block">Przykładowy tekst</h3>
+                <p class="d-none d-lg-block">Przykładowy tekst</p>
             </div>
         </div>
         <div class="carousel-item">
@@ -58,8 +58,8 @@
                 <div class="mask"></div>
             </div>
             <div class="carousel-caption">
-                <h3 class="h3-responsive">Przykładowy tekst</h3>
-                <p>Przykładowy tekst</p>
+                <h3 class="h3-responsive d-none d-lg-block">Przykładowy tekst</h3>
+                <p class="d-none d-lg-block">Przykładowy tekst</p>
             </div>
         </div>
         <div class="carousel-item">
@@ -69,8 +69,8 @@
                 <div class="mask"></div>
             </div>
             <div class="carousel-caption">
-                <h3 class="h3-responsive">Przykładowy tekst</h3>
-                <p>Przykładowy tekst</p>
+                <h3 class="h3-responsive d-none d-lg-block">Przykładowy tekst</h3>
+                <p class="d-none d-lg-block">Przykładowy tekst</p>
           </div>
         </div>
         </div>

@@ -1,4 +1,3 @@
-
 #plan{
   margin-right: 100px;
 }
@@ -21,12 +20,6 @@ li {
 
 .page-link, .page-link:hover{
   color: black;
-}
-
-
-.carousel {
-  width: 1110px;
-  height: 625px;
 }
 
 .footer1{
@@ -98,7 +91,6 @@ background-color: #d5f6f2;
 }
 .glowna{
   margin-top: 100px;
-  width: 100%;
 }
 .cardy{
   margin-top: 50px;

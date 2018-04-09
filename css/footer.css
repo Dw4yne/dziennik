@@ -51,10 +51,21 @@
   color: #333333;
 }
 
-.center {
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+/* Pokaż tylko na ekranach większych lub równych 600px */
+@media only screen and (min-width: 600px) {
+  .center {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+  }
 }
+
+/* Pokaż tylko na ekranach mniejszych lub równych 400px */
+@media only screen and (max-width: 400px) {
+        .center {
+          border-top: 1px solid black;
+          border-bottom: 1px solid black;
+        }
+    }
 
 #scrollTop {
   display: none;
